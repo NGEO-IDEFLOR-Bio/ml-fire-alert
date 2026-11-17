@@ -158,6 +158,46 @@ def _run_cv(
     return compute_metrics(y, oof_cal, uc_ids=uc_ids)
 
 
+def evaluate_temporal_holdout(
+    df: pd.DataFrame,
+    full_cols: list[str],
+    climate_cols: list[str],
+    target_col: str = "y_queima",
+    date_col: str = "ref_date",
+) -> dict[str, Any] | None:
+    """Avalia holdout temporal (treina em datas anteriores, testa na última data)."""
+    if date_col not in df.columns:
+        return None
+    dates = sorted(df[date_col].astype(str).unique())
+    if len(dates) < 2:
+        return None
+
+    last_date = dates[-1]
+    tr_mask = df[date_col].astype(str) < last_date
+    te_mask = df[date_col].astype(str) == last_date
+    if not tr_mask.any() or not te_mask.any():
+        return None
+
+    y_tr = df.loc[tr_mask, target_col].to_numpy(dtype=int)
+    y_te = df.loc[te_mask, target_col].to_numpy(dtype=int)
+    uc_te = df.loc[te_mask, "uc_id"].to_numpy()
+
+    def _fit_eval(cols: list[str]) -> dict[str, Any]:
+        m = _make_lgbm()
+        m.fit(df.loc[tr_mask, cols].astype(float), y_tr)
+        p_tr = m.predict_proba(df.loc[tr_mask, cols].astype(float))[:, 1]
+        iso = IsotonicRegression(out_of_bounds="clip").fit(p_tr, y_tr)
+        p_te = iso.transform(m.predict_proba(df.loc[te_mask, cols].astype(float))[:, 1])
+        return compute_metrics(y_te, p_te, uc_ids=uc_te)
+
+    return {
+        "datas_treino": dates[:-1],
+        "data_teste": last_date,
+        "modelo_completo": _fit_eval(full_cols),
+        "baseline_so_clima": _fit_eval(climate_cols),
+    }
+
+
 def evaluate_experiments(
     df: pd.DataFrame,
     target_col: str = "y_queima",
@@ -176,6 +216,7 @@ def evaluate_experiments(
     block_cv_full = _run_cv(X_full, y, groups=uc_ids, uc_ids=uc_ids, n_splits=n_splits)
     random_cv_full = _run_cv(X_full, y, groups=None, uc_ids=uc_ids, n_splits=n_splits)
     block_cv_climate = _run_cv(X_climate, y, groups=uc_ids, uc_ids=uc_ids, n_splits=n_splits)
+    temporal = evaluate_temporal_holdout(df, full_cols, climate_cols, target_col=target_col)
 
     return {
         "features_usadas": full_cols,
@@ -183,6 +224,7 @@ def evaluate_experiments(
         "block_cv_espacial_por_uc": block_cv_full,
         "random_cv_sem_bloqueio_espacial": random_cv_full,
         "baseline_so_clima_block_cv": block_cv_climate,
+        "holdout_temporal": temporal,
     }
 
 
@@ -287,6 +329,7 @@ def train_and_export(
             "block_cv_espacial_por_uc": eval_res["block_cv_espacial_por_uc"],
             "random_cv_sem_bloqueio_espacial": eval_res["random_cv_sem_bloqueio_espacial"],
             "baseline_so_clima_block_cv": eval_res["baseline_so_clima_block_cv"],
+            "holdout_temporal": eval_res["holdout_temporal"],
         },
         "shap": shap_summary,
         "limitacoes_declaradas": [

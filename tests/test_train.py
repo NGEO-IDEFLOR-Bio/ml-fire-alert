@@ -49,6 +49,29 @@ def test_train_and_export_block_cv_e_shap(tmp_path: Path) -> None:
     assert "block_cv_espacial_por_uc" in card["metricas"]
     assert "random_cv_sem_bloqueio_espacial" in card["metricas"]
     assert "baseline_so_clima_block_cv" in card["metricas"]
+    assert card["metricas"]["holdout_temporal"] is None
+
+
+def test_train_com_holdout_temporal(tmp_path: Path) -> None:
+    df1 = _synthetic_dataset(n_ucs=6, rows_per_uc=20)
+    df1["ref_date"] = "2025-08-31"
+    df2 = _synthetic_dataset(n_ucs=6, rows_per_uc=20)
+    df2["ref_date"] = "2026-08-31"
+    panel = pd.concat([df1, df2], ignore_index=True)
+
+    card = train_and_export(
+        panel,
+        dataset_sha256="deadbeef2",
+        ref_date=date(2026, 8, 31),
+        out_dir=tmp_path,
+        n_splits=3,
+    )
+    ht = card["metricas"]["holdout_temporal"]
+    assert ht is not None
+    assert ht["datas_treino"] == ["2025-08-31"]
+    assert ht["data_teste"] == "2026-08-31"
+    assert "auc_pr" in ht["modelo_completo"]
+    assert "auc_pr" in ht["baseline_so_clima"]
     assert card["nuisance_features_removidas_do_shap"] == ["nuvem_fracao_30d"]
     global_feats = {d["feature"] for d in card["shap"]["global_top"]}
     assert "nuvem_fracao_30d" not in global_feats

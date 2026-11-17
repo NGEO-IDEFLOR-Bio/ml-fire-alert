@@ -4,9 +4,9 @@
   "ref_date": "2026-08-31",
   "validade_ate": "2026-09-30",
   "dataset": {
-    "sha256": "0e5013d4c5041c67d7b790df5b11cc02269459fd99022f00346ac744d409f7d6",
-    "linhas": 288607,
-    "positivos": 467
+    "sha256": "45d241e06810d746e91f73ae4d1ad5cf69d470a3d202255ba861662b18ebbf23",
+    "linhas": 1154428,
+    "positivos": 4349
   },
   "features": [
     "dist_borda_uc_m",
@@ -37,91 +37,153 @@
   ],
   "metricas": {
     "block_cv_espacial_por_uc": {
-      "prevalencia": 0.001618,
-      "auc_pr": 0.0052,
-      "brier": 0.0016,
-      "precision_at_10pct": 0.0068,
+      "prevalencia": 0.003767,
+      "auc_pr": 0.0083,
+      "brier": 0.0037,
+      "precision_at_10pct": 0.0108,
       "curva_calibracao": {
         "prob_media_predita": [
-          0.0008,
-          0.0013,
-          0.0048
+          0.001,
+          0.0016,
+          0.0025,
+          0.0054,
+          0.0094
         ],
         "fracao_positiva_observada": [
-          0.0008,
-          0.0013,
-          0.0048
+          0.001,
+          0.0016,
+          0.0025,
+          0.0054,
+          0.0094
         ]
       },
       "recall_at_k_por_uc": {
-        "mean_recall_at_k": 0.1685,
-        "ucs_avaliadas": 7
+        "mean_recall_at_k": 0.3039,
+        "ucs_avaliadas": 10
       }
     },
     "random_cv_sem_bloqueio_espacial": {
-      "prevalencia": 0.001618,
-      "auc_pr": 0.383,
-      "brier": 0.0012,
-      "precision_at_10pct": 0.0158,
+      "prevalencia": 0.003767,
+      "auc_pr": 0.4046,
+      "brier": 0.0027,
+      "precision_at_10pct": 0.0375,
       "curva_calibracao": {
         "prob_media_predita": [
           0.0,
           0.0,
-          0.0001,
-          0.0126
+          0.0,
+          0.0227
         ],
         "fracao_positiva_observada": [
           0.0,
           0.0,
-          0.0001,
-          0.0126
+          0.0,
+          0.0227
         ]
       },
       "recall_at_k_por_uc": {
-        "mean_recall_at_k": 0.7942,
-        "ucs_avaliadas": 7
+        "mean_recall_at_k": 0.6776,
+        "ucs_avaliadas": 10
       }
     },
     "baseline_so_clima_block_cv": {
-      "prevalencia": 0.001618,
-      "auc_pr": 0.0017,
-      "brier": 0.0016,
-      "precision_at_10pct": 0.0096,
+      "prevalencia": 0.003767,
+      "auc_pr": 0.0156,
+      "brier": 0.0037,
+      "precision_at_10pct": 0.014,
       "curva_calibracao": {
         "prob_media_predita": [
-          0.0016
+          0.0004,
+          0.0005,
+          0.0023,
+          0.0055,
+          0.0105
         ],
         "fracao_positiva_observada": [
-          0.0016
+          0.0004,
+          0.0005,
+          0.0023,
+          0.0055,
+          0.0105
         ]
       },
       "recall_at_k_por_uc": {
-        "mean_recall_at_k": 0.3709,
-        "ucs_avaliadas": 7
+        "mean_recall_at_k": 0.1206,
+        "ucs_avaliadas": 10
+      }
+    },
+    "holdout_temporal": {
+      "datas_treino": [
+        "2024-08-31",
+        "2025-08-31",
+        "2026-07-31"
+      ],
+      "data_teste": "2026-08-31",
+      "modelo_completo": {
+        "prevalencia": 0.001618,
+        "auc_pr": 0.0095,
+        "brier": 0.0016,
+        "precision_at_10pct": 0.0117,
+        "curva_calibracao": {
+          "prob_media_predita": [
+            0.0,
+            0.015
+          ],
+          "fracao_positiva_observada": [
+            0.0013,
+            0.029
+          ]
+        },
+        "recall_at_k_por_uc": {
+          "mean_recall_at_k": 0.4233,
+          "ucs_avaliadas": 7
+        }
+      },
+      "baseline_so_clima": {
+        "prevalencia": 0.001618,
+        "auc_pr": 0.0038,
+        "brier": 0.0016,
+        "precision_at_10pct": 0.0044,
+        "curva_calibracao": {
+          "prob_media_predita": [
+            0.0,
+            0.0004,
+            0.0082
+          ],
+          "fracao_positiva_observada": [
+            0.0014,
+            0.0019,
+            0.0093
+          ]
+        },
+        "recall_at_k_por_uc": {
+          "mean_recall_at_k": 0.0667,
+          "ucs_avaliadas": 7
+        }
       }
     }
   },
   "shap": {
     "global_top": [
       {
-        "feature": "ndvi",
-        "mean_abs_shap": 0.5411
-      },
-      {
         "feature": "lst_dia_c",
-        "mean_abs_shap": 0.53174
+        "mean_abs_shap": 0.38225
       },
       {
-        "feature": "dist_contrato_transicao_m",
-        "mean_abs_shap": 0.14094
+        "feature": "chuva_30d_mm",
+        "mean_abs_shap": 0.31609
       },
       {
-        "feature": "temp_2m_c",
-        "mean_abs_shap": 0.14069
+        "feature": "ndvi",
+        "mean_abs_shap": 0.31504
       },
       {
-        "feature": "lst_noite_c",
-        "mean_abs_shap": 0.13846
+        "feature": "dist_concessao_m",
+        "mean_abs_shap": 0.28849
+      },
+      {
+        "feature": "dist_quilombo_m",
+        "mean_abs_shap": 0.26805
       }
     ],
     "local_por_uc": {
@@ -129,16 +191,16 @@
         "uc_nome": "Área de Proteção Ambiental da Ilha de Combu",
         "top_drivers": [
           {
-            "feature": "temp_2m_c",
-            "mean_shap": 0.15632
+            "feature": "dist_ti_m",
+            "mean_shap": 0.30602
           },
           {
-            "feature": "ndvi",
-            "mean_shap": 0.15251
+            "feature": "dist_quilombo_m",
+            "mean_shap": 0.21715
           },
           {
-            "feature": "elevacao_m",
-            "mean_shap": 0.05749
+            "feature": "declividade_deg",
+            "mean_shap": 0.17737
           }
         ]
       },
@@ -146,16 +208,16 @@
         "uc_nome": "Área de Proteção Ambiental da Região Metropolitana de Belém",
         "top_drivers": [
           {
-            "feature": "dist_contrato_transicao_m",
-            "mean_shap": 0.3975
-          },
-          {
-            "feature": "ndvi",
-            "mean_shap": 0.37395
+            "feature": "lst_dia_c",
+            "mean_shap": 0.73309
           },
           {
             "feature": "dist_ti_m",
-            "mean_shap": 0.19834
+            "mean_shap": 0.35748
+          },
+          {
+            "feature": "dist_quilombo_m",
+            "mean_shap": 0.18578
           }
         ]
       },
@@ -163,16 +225,16 @@
         "uc_nome": "Área de Proteção Ambiental de Algodoal-Maiandeua",
         "top_drivers": [
           {
-            "feature": "ndvi",
-            "mean_shap": 0.90208
-          },
-          {
-            "feature": "temp_2m_c",
-            "mean_shap": 0.66738
+            "feature": "dist_ti_m",
+            "mean_shap": 0.35729
           },
           {
             "feature": "elevacao_m",
-            "mean_shap": 0.19738
+            "mean_shap": 0.26198
+          },
+          {
+            "feature": "chuva_30d_mm",
+            "mean_shap": 0.26142
           }
         ]
       },
@@ -181,15 +243,15 @@
         "top_drivers": [
           {
             "feature": "lst_dia_c",
-            "mean_shap": 1.20604
+            "mean_shap": 1.47003
           },
           {
-            "feature": "ndvi",
-            "mean_shap": 0.66021
+            "feature": "chuva_30d_mm",
+            "mean_shap": 0.53747
           },
           {
-            "feature": "dewpoint_2m_c",
-            "mean_shap": 0.09437
+            "feature": "vpd_kpa",
+            "mean_shap": 0.3729
           }
         ]
       },
@@ -197,16 +259,16 @@
         "uc_nome": "Área de Proteção Ambiental do Lago de Tucuruí",
         "top_drivers": [
           {
-            "feature": "ndvi",
-            "mean_shap": 0.5179
-          },
-          {
             "feature": "lst_dia_c",
-            "mean_shap": 0.48199
+            "mean_shap": 0.36588
           },
           {
-            "feature": "dist_ti_m",
-            "mean_shap": 0.08468
+            "feature": "ndvi",
+            "mean_shap": 0.31506
+          },
+          {
+            "feature": "chuva_30d_mm",
+            "mean_shap": 0.22514
           }
         ]
       },
@@ -214,16 +276,16 @@
         "uc_nome": "Área de Proteção Ambiental do Marajó",
         "top_drivers": [
           {
-            "feature": "ndvi",
-            "mean_shap": 0.38316
+            "feature": "dist_concessao_m",
+            "mean_shap": 0.20341
           },
           {
-            "feature": "temp_2m_c",
-            "mean_shap": 0.21628
+            "feature": "elevacao_m",
+            "mean_shap": 0.162
           },
           {
-            "feature": "lst_noite_c",
-            "mean_shap": 0.07876
+            "feature": "declividade_deg",
+            "mean_shap": 0.09504
           }
         ]
       },
@@ -232,15 +294,15 @@
         "top_drivers": [
           {
             "feature": "lst_dia_c",
-            "mean_shap": 0.78823
-          },
-          {
-            "feature": "ndvi",
-            "mean_shap": 0.29629
+            "mean_shap": 0.30753
           },
           {
             "feature": "dist_ti_m",
-            "mean_shap": 0.2448
+            "mean_shap": 0.28242
+          },
+          {
+            "feature": "ndvi",
+            "mean_shap": 0.21799
           }
         ]
       },
@@ -249,15 +311,15 @@
         "top_drivers": [
           {
             "feature": "lst_dia_c",
-            "mean_shap": 0.96898
+            "mean_shap": 0.93764
           },
           {
-            "feature": "chuva_30d_mm",
-            "mean_shap": 0.23511
+            "feature": "dist_quilombo_m",
+            "mean_shap": 0.83052
           },
           {
-            "feature": "ndvi",
-            "mean_shap": 0.2284
+            "feature": "dist_concessao_m",
+            "mean_shap": 0.58731
           }
         ]
       },
@@ -265,16 +327,16 @@
         "uc_nome": "Estação Ecológica do Grão-Pará (ESEC)",
         "top_drivers": [
           {
-            "feature": "lst_noite_c",
-            "mean_shap": 0.10065
+            "feature": "dist_concessao_m",
+            "mean_shap": 0.1001
           },
           {
             "feature": "dist_contrato_transicao_m",
-            "mean_shap": 0.0593
+            "mean_shap": 0.0793
           },
           {
-            "feature": "chuva_30d_mm",
-            "mean_shap": 0.05368
+            "feature": "lst_noite_c",
+            "mean_shap": 0.05042
           }
         ]
       },
@@ -283,15 +345,15 @@
         "top_drivers": [
           {
             "feature": "lst_dia_c",
-            "mean_shap": 0.16673
+            "mean_shap": 0.06478
+          },
+          {
+            "feature": "evi",
+            "mean_shap": 0.02686
           },
           {
             "feature": "temp_2m_c",
-            "mean_shap": 0.02503
-          },
-          {
-            "feature": "dist_ti_m",
-            "mean_shap": 0.01502
+            "mean_shap": 0.02262
           }
         ]
       },
@@ -300,15 +362,15 @@
         "top_drivers": [
           {
             "feature": "dist_quilombo_m",
-            "mean_shap": 0.14743
+            "mean_shap": 0.90888
+          },
+          {
+            "feature": "dist_concessao_m",
+            "mean_shap": 0.36537
           },
           {
             "feature": "chuva_30d_mm",
-            "mean_shap": 0.12377
-          },
-          {
-            "feature": "dist_contrato_transicao_m",
-            "mean_shap": 0.07687
+            "mean_shap": 0.32936
           }
         ]
       },
@@ -316,16 +378,16 @@
         "uc_nome": "Floresta Estadual do Paru",
         "top_drivers": [
           {
-            "feature": "lst_noite_c",
-            "mean_shap": 0.0992
-          },
-          {
             "feature": "dist_ti_m",
-            "mean_shap": 0.07543
+            "mean_shap": 0.16352
           },
           {
-            "feature": "chuva_30d_mm",
-            "mean_shap": 0.03629
+            "feature": "lst_noite_c",
+            "mean_shap": 0.04712
+          },
+          {
+            "feature": "evi",
+            "mean_shap": 0.04102
           }
         ]
       },
@@ -334,15 +396,15 @@
         "top_drivers": [
           {
             "feature": "dist_contrato_transicao_m",
-            "mean_shap": 0.08579
+            "mean_shap": 0.06495
           },
           {
-            "feature": "chuva_30d_mm",
-            "mean_shap": 0.08129
+            "feature": "evi",
+            "mean_shap": 0.02502
           },
           {
-            "feature": "dist_concessao_m",
-            "mean_shap": 0.03566
+            "feature": "vpd_kpa",
+            "mean_shap": 0.02305
           }
         ]
       },
@@ -350,16 +412,16 @@
         "uc_nome": "Flota Estadual de Faro",
         "top_drivers": [
           {
-            "feature": "lst_dia_c",
-            "mean_shap": 0.17097
-          },
-          {
-            "feature": "dist_concessao_m",
-            "mean_shap": 0.10037
-          },
-          {
             "feature": "dist_contrato_transicao_m",
-            "mean_shap": 0.09259
+            "mean_shap": 0.08196
+          },
+          {
+            "feature": "temp_2m_c",
+            "mean_shap": 0.06904
+          },
+          {
+            "feature": "vpd_kpa",
+            "mean_shap": 0.04564
           }
         ]
       },
@@ -367,16 +429,16 @@
         "uc_nome": "Monumento Natural Atalaia (MONA)",
         "top_drivers": [
           {
-            "feature": "ndvi",
-            "mean_shap": 0.95252
-          },
-          {
-            "feature": "temp_2m_c",
-            "mean_shap": 0.6623
-          },
-          {
             "feature": "dist_ti_m",
-            "mean_shap": 0.26059
+            "mean_shap": 0.34488
+          },
+          {
+            "feature": "chuva_30d_mm",
+            "mean_shap": 0.2902
+          },
+          {
+            "feature": "elevacao_m",
+            "mean_shap": 0.26062
           }
         ]
       },
@@ -384,16 +446,16 @@
         "uc_nome": "Parque Estadual Ambiental das Árvores Gigantes da Amazônia (PAGAM)",
         "top_drivers": [
           {
-            "feature": "lst_noite_c",
-            "mean_shap": 0.16283
+            "feature": "dist_ti_m",
+            "mean_shap": 0.10454
           },
           {
             "feature": "dist_contrato_transicao_m",
-            "mean_shap": 0.07499
+            "mean_shap": 0.0878
           },
           {
-            "feature": "ndvi",
-            "mean_shap": 0.01749
+            "feature": "evi",
+            "mean_shap": 0.04451
           }
         ]
       },
@@ -401,16 +463,16 @@
         "uc_nome": "Parque Estadual Charapucu",
         "top_drivers": [
           {
-            "feature": "lst_noite_c",
-            "mean_shap": 0.10387
+            "feature": "vento_ms",
+            "mean_shap": 0.05725
           },
           {
             "feature": "evi",
-            "mean_shap": 0.05069
+            "mean_shap": 0.05064
           },
           {
-            "feature": "temp_2m_c",
-            "mean_shap": 0.04885
+            "feature": "elevacao_m",
+            "mean_shap": 0.01371
           }
         ]
       },
@@ -419,15 +481,15 @@
         "top_drivers": [
           {
             "feature": "lst_dia_c",
-            "mean_shap": 1.09976
+            "mean_shap": 1.37291
           },
           {
-            "feature": "ndvi",
-            "mean_shap": 0.66198
+            "feature": "chuva_30d_mm",
+            "mean_shap": 0.40781
           },
           {
-            "feature": "dewpoint_2m_c",
-            "mean_shap": 0.06663
+            "feature": "vpd_kpa",
+            "mean_shap": 0.39085
           }
         ]
       },
@@ -436,15 +498,15 @@
         "top_drivers": [
           {
             "feature": "lst_dia_c",
-            "mean_shap": 0.96752
+            "mean_shap": 1.20582
           },
           {
-            "feature": "ndvi",
-            "mean_shap": 0.47673
+            "feature": "chuva_30d_mm",
+            "mean_shap": 0.28505
           },
           {
-            "feature": "dist_ti_m",
-            "mean_shap": 0.33734
+            "feature": "dist_quilombo_m",
+            "mean_shap": 0.2848
           }
         ]
       },
@@ -452,16 +514,16 @@
         "uc_nome": "Refúgio de Vida Silvestre Metrópole da Amazônia (REVIS)",
         "top_drivers": [
           {
-            "feature": "dist_ti_m",
-            "mean_shap": 0.16989
-          },
-          {
             "feature": "lst_dia_c",
-            "mean_shap": 0.16636
+            "mean_shap": 0.5688
           },
           {
-            "feature": "dist_contrato_transicao_m",
-            "mean_shap": 0.08885
+            "feature": "dist_ti_m",
+            "mean_shap": 0.25314
+          },
+          {
+            "feature": "dist_quilombo_m",
+            "mean_shap": 0.19515
           }
         ]
       },
@@ -469,16 +531,16 @@
         "uc_nome": "Refúgio de Vida Silvestre Rios São Benedito e Azul  (REVIS)",
         "top_drivers": [
           {
-            "feature": "lst_dia_c",
-            "mean_shap": 0.15285
-          },
-          {
             "feature": "dist_quilombo_m",
-            "mean_shap": 0.07416
+            "mean_shap": 1.18006
           },
           {
-            "feature": "lst_noite_c",
-            "mean_shap": 0.05862
+            "feature": "chuva_30d_mm",
+            "mean_shap": 0.62265
+          },
+          {
+            "feature": "lst_dia_c",
+            "mean_shap": 0.28272
           }
         ]
       },
@@ -486,16 +548,16 @@
         "uc_nome": "Refúgio de Vida Silvestre Tabuleiro do Embaubal (REVIS)",
         "top_drivers": [
           {
-            "feature": "dist_quilombo_m",
-            "mean_shap": 0.08845
+            "feature": "elevacao_m",
+            "mean_shap": 0.53726
           },
           {
             "feature": "chuva_7d_mm",
-            "mean_shap": 0.04865
+            "mean_shap": 0.34774
           },
           {
-            "feature": "dist_borda_uc_m",
-            "mean_shap": 0.03319
+            "feature": "declividade_deg",
+            "mean_shap": 0.24193
           }
         ]
       },
@@ -504,15 +566,15 @@
         "top_drivers": [
           {
             "feature": "lst_noite_c",
-            "mean_shap": 0.12174
+            "mean_shap": 0.06523
           },
           {
             "feature": "dist_contrato_transicao_m",
-            "mean_shap": 0.05037
+            "mean_shap": 0.06006
           },
           {
-            "feature": "chuva_30d_mm",
-            "mean_shap": 0.04096
+            "feature": "evi",
+            "mean_shap": 0.02885
           }
         ]
       },
@@ -520,16 +582,16 @@
         "uc_nome": "Reserva de Desenvolvimento Sustentável Alcobaça",
         "top_drivers": [
           {
-            "feature": "ndvi",
-            "mean_shap": 0.45577
-          },
-          {
             "feature": "dist_concessao_m",
-            "mean_shap": 0.14363
+            "mean_shap": 0.84169
           },
           {
-            "feature": "dist_quilombo_m",
-            "mean_shap": 0.07486
+            "feature": "ndvi",
+            "mean_shap": 0.36763
+          },
+          {
+            "feature": "chuva_30d_mm",
+            "mean_shap": 0.33874
           }
         ]
       },
@@ -537,16 +599,16 @@
         "uc_nome": "Reserva de Desenvolvimento Sustentável Campo das Mangabas",
         "top_drivers": [
           {
-            "feature": "ndvi",
-            "mean_shap": 1.00408
-          },
-          {
-            "feature": "temp_2m_c",
-            "mean_shap": 0.65096
-          },
-          {
             "feature": "dist_ti_m",
-            "mean_shap": 0.23525
+            "mean_shap": 0.34253
+          },
+          {
+            "feature": "chuva_30d_mm",
+            "mean_shap": 0.29086
+          },
+          {
+            "feature": "elevacao_m",
+            "mean_shap": 0.26315
           }
         ]
       },
@@ -554,16 +616,16 @@
         "uc_nome": "Reserva de Desenvolvimento Sustentável Pucuruí-Ararão",
         "top_drivers": [
           {
-            "feature": "ndvi",
-            "mean_shap": 0.1207
-          },
-          {
-            "feature": "dist_quilombo_m",
-            "mean_shap": 0.08711
+            "feature": "chuva_30d_mm",
+            "mean_shap": 0.2033
           },
           {
             "feature": "dist_ti_m",
-            "mean_shap": 0.05699
+            "mean_shap": 0.13353
+          },
+          {
+            "feature": "temp_2m_c",
+            "mean_shap": 0.12321
           }
         ]
       },
@@ -572,15 +634,15 @@
         "top_drivers": [
           {
             "feature": "ndvi",
-            "mean_shap": 0.40725
+            "mean_shap": 0.29649
           },
           {
-            "feature": "lst_dia_c",
-            "mean_shap": 0.16506
+            "feature": "chuva_30d_mm",
+            "mean_shap": 0.19715
           },
           {
-            "feature": "dist_quilombo_m",
-            "mean_shap": 0.05753
+            "feature": "elevacao_m",
+            "mean_shap": 0.18495
           }
         ]
       }
