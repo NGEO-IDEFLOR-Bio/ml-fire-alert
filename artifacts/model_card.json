@@ -1,0 +1,595 @@
+{
+  "versao": "v1",
+  "alvo": "P(ignicao na UC nos proximos 30 dias)",
+  "ref_date": "2026-08-31",
+  "validade_ate": "2026-09-30",
+  "dataset": {
+    "sha256": "0e5013d4c5041c67d7b790df5b11cc02269459fd99022f00346ac744d409f7d6",
+    "linhas": 288607,
+    "positivos": 467
+  },
+  "features": [
+    "dist_borda_uc_m",
+    "dist_contrato_transicao_m",
+    "dist_concessao_m",
+    "dist_ti_m",
+    "dist_quilombo_m",
+    "lst_dia_c",
+    "lst_noite_c",
+    "ndvi",
+    "evi",
+    "combustivel_classe",
+    "frac_floresta",
+    "frac_pastagem_arbustiva",
+    "hist_queima_12m",
+    "elevacao_m",
+    "declividade_deg",
+    "temp_2m_c",
+    "dewpoint_2m_c",
+    "vento_ms",
+    "vpd_kpa",
+    "chuva_7d_mm",
+    "chuva_30d_mm",
+    "nuvem_fracao_30d"
+  ],
+  "nuisance_features_removidas_do_shap": [
+    "nuvem_fracao_30d"
+  ],
+  "metricas": {
+    "block_cv_espacial_por_uc": {
+      "prevalencia": 0.001618,
+      "auc_pr": 0.0052,
+      "brier": 0.0016,
+      "precision_at_10pct": 0.0068,
+      "curva_calibracao": {
+        "prob_media_predita": [
+          0.0008,
+          0.0013,
+          0.0048
+        ],
+        "fracao_positiva_observada": [
+          0.0008,
+          0.0013,
+          0.0048
+        ]
+      },
+      "recall_at_k_por_uc": {
+        "mean_recall_at_k": 0.1685,
+        "ucs_avaliadas": 7
+      }
+    },
+    "random_cv_sem_bloqueio_espacial": {
+      "prevalencia": 0.001618,
+      "auc_pr": 0.383,
+      "brier": 0.0012,
+      "precision_at_10pct": 0.0158,
+      "curva_calibracao": {
+        "prob_media_predita": [
+          0.0,
+          0.0,
+          0.0001,
+          0.0126
+        ],
+        "fracao_positiva_observada": [
+          0.0,
+          0.0,
+          0.0001,
+          0.0126
+        ]
+      },
+      "recall_at_k_por_uc": {
+        "mean_recall_at_k": 0.7942,
+        "ucs_avaliadas": 7
+      }
+    },
+    "baseline_so_clima_block_cv": {
+      "prevalencia": 0.001618,
+      "auc_pr": 0.0017,
+      "brier": 0.0016,
+      "precision_at_10pct": 0.0096,
+      "curva_calibracao": {
+        "prob_media_predita": [
+          0.0016
+        ],
+        "fracao_positiva_observada": [
+          0.0016
+        ]
+      },
+      "recall_at_k_por_uc": {
+        "mean_recall_at_k": 0.3709,
+        "ucs_avaliadas": 7
+      }
+    }
+  },
+  "shap": {
+    "global_top": [
+      {
+        "feature": "ndvi",
+        "mean_abs_shap": 0.5411
+      },
+      {
+        "feature": "lst_dia_c",
+        "mean_abs_shap": 0.53174
+      },
+      {
+        "feature": "dist_contrato_transicao_m",
+        "mean_abs_shap": 0.14094
+      },
+      {
+        "feature": "temp_2m_c",
+        "mean_abs_shap": 0.14069
+      },
+      {
+        "feature": "lst_noite_c",
+        "mean_abs_shap": 0.13846
+      }
+    ],
+    "local_por_uc": {
+      "1": {
+        "uc_nome": "Área de Proteção Ambiental da Ilha de Combu",
+        "top_drivers": [
+          {
+            "feature": "temp_2m_c",
+            "mean_shap": 0.15632
+          },
+          {
+            "feature": "ndvi",
+            "mean_shap": 0.15251
+          },
+          {
+            "feature": "elevacao_m",
+            "mean_shap": 0.05749
+          }
+        ]
+      },
+      "2": {
+        "uc_nome": "Área de Proteção Ambiental da Região Metropolitana de Belém",
+        "top_drivers": [
+          {
+            "feature": "dist_contrato_transicao_m",
+            "mean_shap": 0.3975
+          },
+          {
+            "feature": "ndvi",
+            "mean_shap": 0.37395
+          },
+          {
+            "feature": "dist_ti_m",
+            "mean_shap": 0.19834
+          }
+        ]
+      },
+      "3": {
+        "uc_nome": "Área de Proteção Ambiental de Algodoal-Maiandeua",
+        "top_drivers": [
+          {
+            "feature": "ndvi",
+            "mean_shap": 0.90208
+          },
+          {
+            "feature": "temp_2m_c",
+            "mean_shap": 0.66738
+          },
+          {
+            "feature": "elevacao_m",
+            "mean_shap": 0.19738
+          }
+        ]
+      },
+      "4": {
+        "uc_nome": "Área de Proteção Ambiental de São Geraldo do Araguaia – APA Araguaia",
+        "top_drivers": [
+          {
+            "feature": "lst_dia_c",
+            "mean_shap": 1.20604
+          },
+          {
+            "feature": "ndvi",
+            "mean_shap": 0.66021
+          },
+          {
+            "feature": "dewpoint_2m_c",
+            "mean_shap": 0.09437
+          }
+        ]
+      },
+      "5": {
+        "uc_nome": "Área de Proteção Ambiental do Lago de Tucuruí",
+        "top_drivers": [
+          {
+            "feature": "ndvi",
+            "mean_shap": 0.5179
+          },
+          {
+            "feature": "lst_dia_c",
+            "mean_shap": 0.48199
+          },
+          {
+            "feature": "dist_ti_m",
+            "mean_shap": 0.08468
+          }
+        ]
+      },
+      "6": {
+        "uc_nome": "Área de Proteção Ambiental do Marajó",
+        "top_drivers": [
+          {
+            "feature": "ndvi",
+            "mean_shap": 0.38316
+          },
+          {
+            "feature": "temp_2m_c",
+            "mean_shap": 0.21628
+          },
+          {
+            "feature": "lst_noite_c",
+            "mean_shap": 0.07876
+          }
+        ]
+      },
+      "7": {
+        "uc_nome": "Área de Proteção Ambiental Paytuna",
+        "top_drivers": [
+          {
+            "feature": "lst_dia_c",
+            "mean_shap": 0.78823
+          },
+          {
+            "feature": "ndvi",
+            "mean_shap": 0.29629
+          },
+          {
+            "feature": "dist_ti_m",
+            "mean_shap": 0.2448
+          }
+        ]
+      },
+      "8": {
+        "uc_nome": "Área de Proteção Ambiental Triunfo do Xingu",
+        "top_drivers": [
+          {
+            "feature": "lst_dia_c",
+            "mean_shap": 0.96898
+          },
+          {
+            "feature": "chuva_30d_mm",
+            "mean_shap": 0.23511
+          },
+          {
+            "feature": "ndvi",
+            "mean_shap": 0.2284
+          }
+        ]
+      },
+      "9": {
+        "uc_nome": "Estação Ecológica do Grão-Pará (ESEC)",
+        "top_drivers": [
+          {
+            "feature": "lst_noite_c",
+            "mean_shap": 0.10065
+          },
+          {
+            "feature": "dist_contrato_transicao_m",
+            "mean_shap": 0.0593
+          },
+          {
+            "feature": "chuva_30d_mm",
+            "mean_shap": 0.05368
+          }
+        ]
+      },
+      "10": {
+        "uc_nome": "Estação Ecológica Mamuru (ESEC)",
+        "top_drivers": [
+          {
+            "feature": "lst_dia_c",
+            "mean_shap": 0.16673
+          },
+          {
+            "feature": "temp_2m_c",
+            "mean_shap": 0.02503
+          },
+          {
+            "feature": "dist_ti_m",
+            "mean_shap": 0.01502
+          }
+        ]
+      },
+      "11": {
+        "uc_nome": "Floresta Estadual do Iriri",
+        "top_drivers": [
+          {
+            "feature": "dist_quilombo_m",
+            "mean_shap": 0.14743
+          },
+          {
+            "feature": "chuva_30d_mm",
+            "mean_shap": 0.12377
+          },
+          {
+            "feature": "dist_contrato_transicao_m",
+            "mean_shap": 0.07687
+          }
+        ]
+      },
+      "12": {
+        "uc_nome": "Floresta Estadual do Paru",
+        "top_drivers": [
+          {
+            "feature": "lst_noite_c",
+            "mean_shap": 0.0992
+          },
+          {
+            "feature": "dist_ti_m",
+            "mean_shap": 0.07543
+          },
+          {
+            "feature": "chuva_30d_mm",
+            "mean_shap": 0.03629
+          }
+        ]
+      },
+      "13": {
+        "uc_nome": "Floresta Estadual do Trombetas",
+        "top_drivers": [
+          {
+            "feature": "dist_contrato_transicao_m",
+            "mean_shap": 0.08579
+          },
+          {
+            "feature": "chuva_30d_mm",
+            "mean_shap": 0.08129
+          },
+          {
+            "feature": "dist_concessao_m",
+            "mean_shap": 0.03566
+          }
+        ]
+      },
+      "14": {
+        "uc_nome": "Flota Estadual de Faro",
+        "top_drivers": [
+          {
+            "feature": "lst_dia_c",
+            "mean_shap": 0.17097
+          },
+          {
+            "feature": "dist_concessao_m",
+            "mean_shap": 0.10037
+          },
+          {
+            "feature": "dist_contrato_transicao_m",
+            "mean_shap": 0.09259
+          }
+        ]
+      },
+      "15": {
+        "uc_nome": "Monumento Natural Atalaia (MONA)",
+        "top_drivers": [
+          {
+            "feature": "ndvi",
+            "mean_shap": 0.95252
+          },
+          {
+            "feature": "temp_2m_c",
+            "mean_shap": 0.6623
+          },
+          {
+            "feature": "dist_ti_m",
+            "mean_shap": 0.26059
+          }
+        ]
+      },
+      "16": {
+        "uc_nome": "Parque Estadual Ambiental das Árvores Gigantes da Amazônia (PAGAM)",
+        "top_drivers": [
+          {
+            "feature": "lst_noite_c",
+            "mean_shap": 0.16283
+          },
+          {
+            "feature": "dist_contrato_transicao_m",
+            "mean_shap": 0.07499
+          },
+          {
+            "feature": "ndvi",
+            "mean_shap": 0.01749
+          }
+        ]
+      },
+      "17": {
+        "uc_nome": "Parque Estadual Charapucu",
+        "top_drivers": [
+          {
+            "feature": "lst_noite_c",
+            "mean_shap": 0.10387
+          },
+          {
+            "feature": "evi",
+            "mean_shap": 0.05069
+          },
+          {
+            "feature": "temp_2m_c",
+            "mean_shap": 0.04885
+          }
+        ]
+      },
+      "18": {
+        "uc_nome": "Parque Estadual da Serra dos Martírios/Andorinhas",
+        "top_drivers": [
+          {
+            "feature": "lst_dia_c",
+            "mean_shap": 1.09976
+          },
+          {
+            "feature": "ndvi",
+            "mean_shap": 0.66198
+          },
+          {
+            "feature": "dewpoint_2m_c",
+            "mean_shap": 0.06663
+          }
+        ]
+      },
+      "20": {
+        "uc_nome": "Parque Estadual Monte Alegre – PEMA",
+        "top_drivers": [
+          {
+            "feature": "lst_dia_c",
+            "mean_shap": 0.96752
+          },
+          {
+            "feature": "ndvi",
+            "mean_shap": 0.47673
+          },
+          {
+            "feature": "dist_ti_m",
+            "mean_shap": 0.33734
+          }
+        ]
+      },
+      "21": {
+        "uc_nome": "Refúgio de Vida Silvestre Metrópole da Amazônia (REVIS)",
+        "top_drivers": [
+          {
+            "feature": "dist_ti_m",
+            "mean_shap": 0.16989
+          },
+          {
+            "feature": "lst_dia_c",
+            "mean_shap": 0.16636
+          },
+          {
+            "feature": "dist_contrato_transicao_m",
+            "mean_shap": 0.08885
+          }
+        ]
+      },
+      "23": {
+        "uc_nome": "Refúgio de Vida Silvestre Rios São Benedito e Azul  (REVIS)",
+        "top_drivers": [
+          {
+            "feature": "lst_dia_c",
+            "mean_shap": 0.15285
+          },
+          {
+            "feature": "dist_quilombo_m",
+            "mean_shap": 0.07416
+          },
+          {
+            "feature": "lst_noite_c",
+            "mean_shap": 0.05862
+          }
+        ]
+      },
+      "24": {
+        "uc_nome": "Refúgio de Vida Silvestre Tabuleiro do Embaubal (REVIS)",
+        "top_drivers": [
+          {
+            "feature": "dist_quilombo_m",
+            "mean_shap": 0.08845
+          },
+          {
+            "feature": "chuva_7d_mm",
+            "mean_shap": 0.04865
+          },
+          {
+            "feature": "dist_borda_uc_m",
+            "mean_shap": 0.03319
+          }
+        ]
+      },
+      "25": {
+        "uc_nome": "Reserva Biológica do Maicuru (REBIO)",
+        "top_drivers": [
+          {
+            "feature": "lst_noite_c",
+            "mean_shap": 0.12174
+          },
+          {
+            "feature": "dist_contrato_transicao_m",
+            "mean_shap": 0.05037
+          },
+          {
+            "feature": "chuva_30d_mm",
+            "mean_shap": 0.04096
+          }
+        ]
+      },
+      "26": {
+        "uc_nome": "Reserva de Desenvolvimento Sustentável Alcobaça",
+        "top_drivers": [
+          {
+            "feature": "ndvi",
+            "mean_shap": 0.45577
+          },
+          {
+            "feature": "dist_concessao_m",
+            "mean_shap": 0.14363
+          },
+          {
+            "feature": "dist_quilombo_m",
+            "mean_shap": 0.07486
+          }
+        ]
+      },
+      "27": {
+        "uc_nome": "Reserva de Desenvolvimento Sustentável Campo das Mangabas",
+        "top_drivers": [
+          {
+            "feature": "ndvi",
+            "mean_shap": 1.00408
+          },
+          {
+            "feature": "temp_2m_c",
+            "mean_shap": 0.65096
+          },
+          {
+            "feature": "dist_ti_m",
+            "mean_shap": 0.23525
+          }
+        ]
+      },
+      "28": {
+        "uc_nome": "Reserva de Desenvolvimento Sustentável Pucuruí-Ararão",
+        "top_drivers": [
+          {
+            "feature": "ndvi",
+            "mean_shap": 0.1207
+          },
+          {
+            "feature": "dist_quilombo_m",
+            "mean_shap": 0.08711
+          },
+          {
+            "feature": "dist_ti_m",
+            "mean_shap": 0.05699
+          }
+        ]
+      },
+      "29": {
+        "uc_nome": "Reserva de Desenvolvimento Sustentável Vitória de Souzel",
+        "top_drivers": [
+          {
+            "feature": "ndvi",
+            "mean_shap": 0.40725
+          },
+          {
+            "feature": "lst_dia_c",
+            "mean_shap": 0.16506
+          },
+          {
+            "feature": "dist_quilombo_m",
+            "mean_shap": 0.05753
+          }
+        ]
+      }
+    }
+  },
+  "limitacoes_declaradas": [
+    "SHAP explica a previsao do modelo, nao causalidade.",
+    "Rotulo MCD64A1 herda vies de deteccao por nuvem (mitigado por nuisance nuvem_fracao_30d).",
+    "Confundidor de fogo de manejo permanece sem curadoria (D-009).",
+    "SHAP local de modelo global representa transferencia de drivers, nao modelo exclusivo da UC."
+  ]
+}
