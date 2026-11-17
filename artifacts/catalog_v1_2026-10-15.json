@@ -1,0 +1,210 @@
+{
+  "versao": "v1",
+  "ref_date": "2026-10-15",
+  "arquivo": "features_v1_2026-10-15.parquet",
+  "sha256": "24ff97b88fef0294a83a3e1abf553b515f0ab0d5dc1535c8cd0a53e27fa638ff",
+  "linhas": 288607,
+  "colunas": [
+    "cell_id",
+    "uc_id",
+    "uc_nome",
+    "gerencia_id",
+    "dentro_uc",
+    "dentro_za",
+    "dist_borda_uc_m",
+    "x_5880",
+    "y_5880",
+    "lon",
+    "lat",
+    "dist_contrato_transicao_m",
+    "dist_concessao_m",
+    "dist_ti_m",
+    "dist_quilombo_m"
+  ],
+  "catalogo": [
+    {
+      "coluna": "cell_id",
+      "grupo": "identificacao",
+      "fonte": "Grade 1 km (EPSG:5880)",
+      "resolucao": "1000 m",
+      "janela": "estatica",
+      "tipo": "chave"
+    },
+    {
+      "coluna": "dist_borda_uc_m",
+      "grupo": "territorial",
+      "fonte": "IDEFLOR-Bio (29 UCs DGMUC)",
+      "resolucao": "vetorial (EPSG:5880)",
+      "janela": "estatica",
+      "tipo": "feature"
+    },
+    {
+      "coluna": "dist_contrato_transicao_m",
+      "grupo": "pressao_antropica",
+      "fonte": "IDEFLOR-Bio (contratos_de_transicao.geojson)",
+      "resolucao": "vetorial (EPSG:5880)",
+      "janela": "estatica",
+      "tipo": "feature"
+    },
+    {
+      "coluna": "dist_concessao_m",
+      "grupo": "pressao_antropica",
+      "fonte": "IDEFLOR-Bio (concessoes_florestais_ideflor.geojson)",
+      "resolucao": "vetorial (EPSG:5880)",
+      "janela": "estatica",
+      "tipo": "feature"
+    },
+    {
+      "coluna": "dist_ti_m",
+      "grupo": "contexto_territorial",
+      "fonte": "FUNAI / visualizador (terras_indigenas.geojson)",
+      "resolucao": "vetorial (EPSG:5880)",
+      "janela": "estatica",
+      "tipo": "feature"
+    },
+    {
+      "coluna": "dist_quilombo_m",
+      "grupo": "contexto_territorial",
+      "fonte": "INCRA/ITERPA (quilombos_estaduais + federais)",
+      "resolucao": "vetorial (EPSG:5880)",
+      "janela": "estatica",
+      "tipo": "feature"
+    },
+    {
+      "coluna": "lst_dia_c",
+      "grupo": "termica",
+      "fonte": "MODIS/061/MOD11A1",
+      "resolucao": "1000 m",
+      "janela": "16 dias anteriores",
+      "tipo": "feature"
+    },
+    {
+      "coluna": "lst_noite_c",
+      "grupo": "termica",
+      "fonte": "MODIS/061/MOD11A1",
+      "resolucao": "1000 m",
+      "janela": "16 dias anteriores",
+      "tipo": "feature"
+    },
+    {
+      "coluna": "ndvi",
+      "grupo": "vegetacao",
+      "fonte": "MODIS/061/MOD13A2",
+      "resolucao": "1000 m",
+      "janela": "30 dias anteriores",
+      "tipo": "feature"
+    },
+    {
+      "coluna": "evi",
+      "grupo": "vegetacao",
+      "fonte": "MODIS/061/MOD13A2",
+      "resolucao": "1000 m",
+      "janela": "30 dias anteriores",
+      "tipo": "feature"
+    },
+    {
+      "coluna": "chuva_7d_mm",
+      "grupo": "precipitacao",
+      "fonte": "UCSB-CHG/CHIRPS/DAILY",
+      "resolucao": "~5500 m",
+      "janela": "7 dias anteriores",
+      "tipo": "feature"
+    },
+    {
+      "coluna": "chuva_30d_mm",
+      "grupo": "precipitacao",
+      "fonte": "UCSB-CHG/CHIRPS/DAILY",
+      "resolucao": "~5500 m",
+      "janela": "30 dias anteriores",
+      "tipo": "feature"
+    },
+    {
+      "coluna": "temp_2m_c",
+      "grupo": "clima_seca",
+      "fonte": "ECMWF/ERA5_LAND/DAILY_AGGR",
+      "resolucao": "~11132 m",
+      "janela": "7 dias anteriores",
+      "tipo": "feature"
+    },
+    {
+      "coluna": "dewpoint_2m_c",
+      "grupo": "clima_seca",
+      "fonte": "ECMWF/ERA5_LAND/DAILY_AGGR",
+      "janela": "7 dias anteriores",
+      "resolucao": "~11132 m",
+      "tipo": "feature"
+    },
+    {
+      "coluna": "vento_ms",
+      "grupo": "clima_seca",
+      "fonte": "ECMWF/ERA5_LAND/DAILY_AGGR",
+      "resolucao": "~11132 m",
+      "janela": "7 dias anteriores",
+      "tipo": "feature"
+    },
+    {
+      "coluna": "vpd_kpa",
+      "grupo": "clima_seca",
+      "fonte": "ECMWF/ERA5_LAND/DAILY_AGGR (Tetens)",
+      "resolucao": "~11132 m",
+      "janela": "7 dias anteriores",
+      "tipo": "feature"
+    },
+    {
+      "coluna": "combustivel_classe",
+      "grupo": "combustivel",
+      "fonte": "ESA/WorldCover/v200",
+      "resolucao": "10 m (amostrado 1000 m)",
+      "janela": "estatica (2021)",
+      "tipo": "feature"
+    },
+    {
+      "coluna": "frac_floresta",
+      "grupo": "combustivel",
+      "fonte": "ESA/WorldCover/v200",
+      "resolucao": "10 m (agregado 1000 m)",
+      "janela": "estatica (2021)",
+      "tipo": "feature"
+    },
+    {
+      "coluna": "frac_pastagem_arbustiva",
+      "grupo": "combustivel",
+      "fonte": "ESA/WorldCover/v200",
+      "resolucao": "10 m (agregado 1000 m)",
+      "janela": "estatica (2021)",
+      "tipo": "feature"
+    },
+    {
+      "coluna": "hist_queima_12m",
+      "grupo": "historico",
+      "fonte": "MODIS/061/MCD64A1",
+      "resolucao": "500 m",
+      "janela": "12 meses anteriores",
+      "tipo": "feature"
+    },
+    {
+      "coluna": "nuvem_fracao_30d",
+      "grupo": "detectabilidade",
+      "fonte": "MODIS/061/MOD09GA (state_1km)",
+      "resolucao": "1000 m",
+      "janela": "30 dias anteriores",
+      "tipo": "nuisance"
+    },
+    {
+      "coluna": "elevacao_m",
+      "grupo": "relevo",
+      "fonte": "COPERNICUS/DEM/GLO30",
+      "resolucao": "30 m",
+      "janela": "estatica",
+      "tipo": "feature"
+    },
+    {
+      "coluna": "declividade_deg",
+      "grupo": "relevo",
+      "fonte": "COPERNICUS/DEM/GLO30",
+      "resolucao": "30 m",
+      "janela": "estatica",
+      "tipo": "feature"
+    }
+  ]
+}
