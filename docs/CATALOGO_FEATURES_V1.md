@@ -23,7 +23,7 @@ Unidade de análise: **célula de 1 km × 1 km (EPSG:5880)** recortada nas **29 
 | `combustivel_classe`, `frac_floresta`, `frac_pastagem_arbustiva` | combustível | `ESA/WorldCover/v200` | 10 m | estática (2021) | feature |
 | `hist_queima_12m` | histórico | `MODIS/061/MCD64A1` | 500 m | 12 meses | feature |
 | `nuvem_fracao_30d` | detectabilidade | `MODIS/061/MOD09GA` | 1000 m | 30d | **nuisance** |
-| `elevacao_m`, `declividade_deg` | relevo | `COPERNICUS/DEM/GLO30` | 30 m | estática | feature |
+| `elevacao_m`, `declividade_deg` | relevo | `COPERNICUS/DEM/GLO30_2024_1` | 30 m | estática | feature |
 
 ## Pendências registradas para v2 (issue #04)
 - Estradas (OSM/DNIT) e densidade de raios não incluídas na v1.

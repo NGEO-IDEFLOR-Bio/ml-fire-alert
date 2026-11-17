@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import date, timedelta
 from pathlib import Path
 from typing import Any
@@ -124,7 +125,7 @@ def build_feature_image(ref_date: date) -> ee.Image:
     )
 
     # 8. Relevo (Copernicus DEM GLO-30)
-    dem = ee.ImageCollection("COPERNICUS/DEM/GLO30").select("DEM").mosaic()
+    dem = ee.ImageCollection("COPERNICUS/DEM/GLO30_2024_1").select("DEM").mosaic()
     elevacao = dem.rename("elevacao_m")
     declividade = ee.Terrain.slope(dem).rename("declividade_deg")
 
@@ -149,37 +150,49 @@ def build_feature_image(ref_date: date) -> ee.Image:
     )
 
 
+def _sample_chunk(
+    image: ee.Image, chunk: list[dict[str, Any]], scale_m: int
+) -> list[dict[str, Any]]:
+    fc = ee.FeatureCollection(
+        [
+            ee.Feature(
+                ee.Geometry.Point([r["lon"], r["lat"]]),
+                {"cell_id": r["cell_id"]},
+            )
+            for r in chunk
+        ]
+    )
+    sampled = image.sampleRegions(
+        collection=fc,
+        properties=["cell_id"],
+        scale=scale_m,
+        geometries=False,
+    )
+    info = sampled.getInfo()
+    return [feat["properties"] for feat in info.get("features", [])]
+
+
 def extract_gee_features(
     grid_df: pd.DataFrame,
     ref_date: date,
-    batch_size: int = 400,
+    batch_size: int = 2000,
     scale_m: int = 1000,
+    max_workers: int = 4,
 ) -> pd.DataFrame:
-    """Amostra a pilha GEE nos centroides da grade em lotes para evitar limite de payload."""
+    """Amostra a pilha GEE nos centroides da grade em lotes paralelos."""
     image = build_feature_image(ref_date)
-    records: list[dict[str, Any]] = []
-
     rows = grid_df[["cell_id", "lon", "lat"]].to_dict("records")
-    for start in range(0, len(rows), batch_size):
-        chunk = rows[start : start + batch_size]
-        fc = ee.FeatureCollection(
-            [
-                ee.Feature(
-                    ee.Geometry.Point([r["lon"], r["lat"]]),
-                    {"cell_id": r["cell_id"]},
-                )
-                for r in chunk
-            ]
-        )
-        sampled = image.sampleRegions(
-            collection=fc,
-            properties=["cell_id"],
-            scale=scale_m,
-            geometries=False,
-        )
-        info = sampled.getInfo()
-        for feat in info.get("features", []):
-            records.append(feat["properties"])
+    chunks = [rows[start : start + batch_size] for start in range(0, len(rows), batch_size)]
+
+    records: list[dict[str, Any]] = []
+    if max_workers <= 1 or len(chunks) <= 1:
+        for chunk in chunks:
+            records.extend(_sample_chunk(image, chunk, scale_m))
+    else:
+        with ThreadPoolExecutor(max_workers=max_workers) as pool:
+            futs = [pool.submit(_sample_chunk, image, chunk, scale_m) for chunk in chunks]
+            for fut in as_completed(futs):
+                records.extend(fut.result())
 
     gee_df = pd.DataFrame(records)
     if gee_df.empty:

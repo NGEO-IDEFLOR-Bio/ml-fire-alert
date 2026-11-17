@@ -182,7 +182,7 @@ FEATURE_CATALOG_V1: list[dict[str, str]] = [
     {
         "coluna": "elevacao_m",
         "grupo": "relevo",
-        "fonte": "COPERNICUS/DEM/GLO30",
+        "fonte": "COPERNICUS/DEM/GLO30_2024_1",
         "resolucao": "30 m",
         "janela": "estatica",
         "tipo": "feature",
@@ -190,7 +190,7 @@ FEATURE_CATALOG_V1: list[dict[str, str]] = [
     {
         "coluna": "declividade_deg",
         "grupo": "relevo",
-        "fonte": "COPERNICUS/DEM/GLO30",
+        "fonte": "COPERNICUS/DEM/GLO30_2024_1",
         "resolucao": "30 m",
         "janela": "estatica",
         "tipo": "feature",
