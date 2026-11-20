@@ -9,8 +9,10 @@ from shapely.geometry import box
 from ml_fire.spatial_cv import folds_com_embargo
 from ml_fire.train import NUISANCE_FEATURES
 from ml_fire.train_v2 import (
+    CLIMA_BASELINE,
     FEATURES_V2,
     avaliar,
+    avaliar_holdout_temporal,
     matriz_shap,
     top_global,
     top_por_uc,
@@ -93,3 +95,24 @@ def test_shap_expurga_nuisance() -> None:
     globais = top_global(matriz, k=4)
     assert len(globais) == 4
     assert all(g["mean_abs_shap"] >= 0 for g in globais)
+
+
+def test_holdout_temporal_v2() -> None:
+    df, _ = _dados(100)
+    # Atribui duas datas sinteticas
+    metade = len(df) // 2
+    df["ref_date"] = ["2026-07-31"] * metade + ["2026-08-31"] * (len(df) - metade)
+
+    features = [*FEATURES_V2, *NUISANCE_FEATURES]
+    res = avaliar_holdout_temporal(
+        df,
+        features,
+        list(CLIMA_BASELINE),
+        params={"num_leaves": 7, "min_child_samples": 10},
+    )
+    assert res is not None
+    assert res["datas_treino"] == ["2026-07-31"]
+    assert res["data_teste"] == "2026-08-31"
+    assert "auc_pr" in res["modelo_completo"]
+    assert "recall_at_10pct" in res["modelo_completo"]
+    assert "auc_pr" in res["baseline_so_clima"]

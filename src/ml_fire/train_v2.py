@@ -373,3 +373,68 @@ def top_por_uc(matriz: pd.DataFrame, df: pd.DataFrame, *, k: int = 5) -> dict[st
             {"feature": str(f), "mean_shap": round(float(medias[f]), 5)} for f in ordem
         ]
     return saida
+
+
+def avaliar_holdout_temporal(
+    df: pd.DataFrame,
+    features: list[str],
+    clima_features: list[str],
+    *,
+    target_col: str = "y_queima",
+    date_col: str = "ref_date",
+    params: dict[str, Any] | None = None,
+) -> dict[str, Any] | None:
+    """Avalia o modelo completo e baseline climatico em particao temporal estrita."""
+    if date_col not in df.columns:
+        return None
+    datas = sorted(df[date_col].astype(str).unique())
+    if len(datas) < 2:
+        return None
+
+    last_date = datas[-1]
+    tr_mask = df[date_col].astype(str) < last_date
+    te_mask = df[date_col].astype(str) == last_date
+    if not tr_mask.any() or not te_mask.any():
+        return None
+
+    y_tr = df.loc[tr_mask, target_col].to_numpy(dtype=int)
+    y_te = df.loc[te_mask, target_col].to_numpy(dtype=int)
+    sub_te = df.loc[te_mask].reset_index(drop=True)
+
+    hiper = {**BASE, **(params or {}), "n_estimators": 300}
+
+    def _fit_eval(cols: list[str]) -> dict[str, Any]:
+        x_tr = df.loc[tr_mask, cols].astype(float)
+        x_te = df.loc[te_mask, cols].astype(float)
+        m = LGBMClassifier(**hiper)
+        m.fit(x_tr, y_tr)
+        p_tr = m.predict_proba(x_tr)[:, 1]
+        iso = IsotonicRegression(out_of_bounds="clip").fit(p_tr, y_tr)
+        raw_te = m.predict_proba(x_te)[:, 1]
+        cal_te = iso.transform(raw_te)
+
+        k = 0.10
+        top_n = max(1, int(len(y_te) * k))
+        ord_idx = np.argsort(raw_te)[::-1][:top_n]
+        recall_10pct = float(y_te[ord_idx].sum() / max(1, y_te.sum()))
+        por_uc = recall_por_uc(sub_te, y_te, raw_te, fracao=0.10)
+
+        return {
+            "n_celulas": int(len(y_te)),
+            "positivos": int(y_te.sum()),
+            "prevalencia": round(float(y_te.mean()), 6),
+            "auc_pr": round(float(average_precision_score(y_te, raw_te)), 4),
+            "brier": round(float(brier_score_loss(y_te, cal_te)), 4),
+            "recall_at_10pct": round(recall_10pct, 4),
+            "recall_at_10pct_por_uc": por_uc,
+            "curva_calibracao": curva_calibracao(y_te, cal_te),
+        }
+
+    return {
+        "datas_treino": datas[:-1],
+        "data_teste": last_date,
+        "n_celulas_treino": int(tr_mask.sum()),
+        "positivos_treino": int(y_tr.sum()),
+        "modelo_completo": _fit_eval(features),
+        "baseline_so_clima": _fit_eval(clima_features),
+    }

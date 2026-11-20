@@ -109,6 +109,7 @@ def montar_card(
         "n_folds": metricas.get("n_folds"),
         "por_fold": metricas.get("por_fold"),
         "detalhe_baseline": metricas.get("baseline_climatico"),
+        "holdout_temporal": metricas.get("holdout_temporal"),
     }
 
     card: dict[str, Any] = {

@@ -26,6 +26,7 @@ from ml_fire.train_v2 import (
     FEATURES_V2,
     amostra_estratificada_por_uc,
     avaliar_cv,
+    avaliar_holdout_temporal,
     matriz_shap,
     selecionar_hiperparametros,
     top_global,
@@ -92,6 +93,26 @@ def main(argv: list[str] | None = None) -> int:
     }
     print("por fold:", metricas["por_fold"])
     print("baseline por fold:", base_metricas["por_fold"])
+
+    holdout = avaliar_holdout_temporal(
+        df,
+        features,
+        list(CLIMA_BASELINE),
+        params=params or PARAMS_PADRAO,
+    )
+    if holdout:
+        metricas["holdout_temporal"] = holdout
+        print(
+            "holdout temporal:",
+            {
+                "datas_treino": holdout["datas_treino"],
+                "data_teste": holdout["data_teste"],
+                "modelo_auc_pr": holdout["modelo_completo"]["auc_pr"],
+                "modelo_recall@10%": holdout["modelo_completo"]["recall_at_10pct"],
+                "baseline_auc_pr": holdout["baseline_so_clima"]["auc_pr"],
+                "baseline_recall@10%": holdout["baseline_so_clima"]["recall_at_10pct"],
+            },
+        )
 
     indices = amostra_estratificada_por_uc(df, n_total=20_000, minimo_por_uc=400)
     shap_matriz, expurgadas, indices = matriz_shap(treino.modelo, x, features, indices=indices)

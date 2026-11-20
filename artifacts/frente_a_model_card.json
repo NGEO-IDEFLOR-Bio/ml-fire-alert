@@ -150,6 +150,100 @@
         0.613636
       ],
       "brier": 0.002949
+    },
+    "holdout_temporal": {
+      "datas_treino": [
+        "2026-05-31",
+        "2026-06-30",
+        "2026-07-31"
+      ],
+      "data_teste": "2026-08-31",
+      "n_celulas_treino": 865821,
+      "positivos_treino": 672,
+      "modelo_completo": {
+        "n_celulas": 288607,
+        "positivos": 1290,
+        "prevalencia": 0.00447,
+        "auc_pr": 0.0322,
+        "brier": 0.0047,
+        "recall_at_10pct": 0.731,
+        "recall_at_10pct_por_uc": {
+          "media": 0.493821,
+          "ucs_avaliadas": 12,
+          "por_uc": {
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.8839,
+            "8": 0.242,
+            "11": 1.0,
+            "12": 0.8,
+            "13": 1.0,
+            "18": 0.0,
+            "22": 0.0,
+            "23": 1.0,
+            "26": 0.0,
+            "27": 1.0
+          }
+        },
+        "curva_calibracao": {
+          "prob_media_predita": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.004433
+          ],
+          "fracao_positiva_observada": [
+            0.004227,
+            0.007605,
+            0.002495,
+            0.0,
+            0.008021
+          ]
+        }
+      },
+      "baseline_so_clima": {
+        "n_celulas": 288607,
+        "positivos": 1290,
+        "prevalencia": 0.00447,
+        "auc_pr": 0.0036,
+        "brier": 0.0052,
+        "recall_at_10pct": 0.0008,
+        "recall_at_10pct_por_uc": {
+          "media": 0.057273,
+          "ucs_avaliadas": 12,
+          "por_uc": {
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0478,
+            "8": 0.0749,
+            "11": 0.0,
+            "12": 0.0,
+            "13": 0.0645,
+            "18": 0.0,
+            "22": 0.0,
+            "23": 0.0,
+            "26": 0.0,
+            "27": 0.5
+          }
+        },
+        "curva_calibracao": {
+          "prob_media_predita": [
+            0.0,
+            0.0,
+            0.0,
+            5e-05,
+            0.020643
+          ],
+          "fracao_positiva_observada": [
+            0.007484,
+            0.009927,
+            0.002841,
+            0.001386,
+            0.00071
+          ]
+        }
+      }
     }
   },
   "features_utilizadas": [
@@ -988,6 +1082,100 @@
         0.613636
       ],
       "brier": 0.002949
+    },
+    "holdout_temporal": {
+      "datas_treino": [
+        "2026-05-31",
+        "2026-06-30",
+        "2026-07-31"
+      ],
+      "data_teste": "2026-08-31",
+      "n_celulas_treino": 865821,
+      "positivos_treino": 672,
+      "modelo_completo": {
+        "n_celulas": 288607,
+        "positivos": 1290,
+        "prevalencia": 0.00447,
+        "auc_pr": 0.0322,
+        "brier": 0.0047,
+        "recall_at_10pct": 0.731,
+        "recall_at_10pct_por_uc": {
+          "media": 0.493821,
+          "ucs_avaliadas": 12,
+          "por_uc": {
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.8839,
+            "8": 0.242,
+            "11": 1.0,
+            "12": 0.8,
+            "13": 1.0,
+            "18": 0.0,
+            "22": 0.0,
+            "23": 1.0,
+            "26": 0.0,
+            "27": 1.0
+          }
+        },
+        "curva_calibracao": {
+          "prob_media_predita": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.004433
+          ],
+          "fracao_positiva_observada": [
+            0.004227,
+            0.007605,
+            0.002495,
+            0.0,
+            0.008021
+          ]
+        }
+      },
+      "baseline_so_clima": {
+        "n_celulas": 288607,
+        "positivos": 1290,
+        "prevalencia": 0.00447,
+        "auc_pr": 0.0036,
+        "brier": 0.0052,
+        "recall_at_10pct": 0.0008,
+        "recall_at_10pct_por_uc": {
+          "media": 0.057273,
+          "ucs_avaliadas": 12,
+          "por_uc": {
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0478,
+            "8": 0.0749,
+            "11": 0.0,
+            "12": 0.0,
+            "13": 0.0645,
+            "18": 0.0,
+            "22": 0.0,
+            "23": 0.0,
+            "26": 0.0,
+            "27": 0.5
+          }
+        },
+        "curva_calibracao": {
+          "prob_media_predita": [
+            0.0,
+            0.0,
+            0.0,
+            5e-05,
+            0.020643
+          ],
+          "fracao_positiva_observada": [
+            0.007484,
+            0.009927,
+            0.002841,
+            0.001386,
+            0.00071
+          ]
+        }
+      }
     }
   },
   "shap": {
