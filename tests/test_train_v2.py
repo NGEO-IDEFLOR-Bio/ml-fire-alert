@@ -46,6 +46,7 @@ def _dados(n_por_uc: int = 120) -> tuple[pd.DataFrame, dict[int, object]]:
                     "frac_floresta": rng.beta(2, 3),
                     "declividade_deg": abs(rng.normal(2, 1)),
                     "tempo_desde_fogo_anos": rng.integers(0, 40),
+                    "frac_sobreposicao_car": rng.beta(2, 5),
                     "nuvem_fracao_30d": rng.beta(2, 4),
                     "y_queima": int(risco > 1.6),
                 }

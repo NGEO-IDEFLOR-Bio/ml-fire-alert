@@ -33,6 +33,7 @@ FEATURES_V2: tuple[str, ...] = (
     "frac_floresta",
     "declividade_deg",
     "tempo_desde_fogo_anos",
+    "frac_sobreposicao_car",
 )
 
 CLIMA_BASELINE = ("chuva_30d_mm", "vpd_kpa", "lst_dia_c", "nuvem_fracao_30d")

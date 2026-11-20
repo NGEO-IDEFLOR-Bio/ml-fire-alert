@@ -250,10 +250,10 @@ FEATURE_CATALOG_V2: list[dict[str, str]] = [
     {
         "coluna": "frac_sobreposicao_car",
         "grupo": "fundiario",
-        "fonte": "SICAR / SEMAS-PA (nao acessivel)",
-        "resolucao": "-",
-        "janela": "-",
-        "tipo": "ausente_declarada",
+        "fonte": "SICAR / SEMAS-PA (via ver-o-car-api)",
+        "resolucao": "vetorial (mascara 250 m agregada 1000 m)",
+        "janela": "estatica (extrato 390k imoveis)",
+        "tipo": "feature",
     },
 ]
 
