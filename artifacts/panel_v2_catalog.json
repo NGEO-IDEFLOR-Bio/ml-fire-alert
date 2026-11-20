@@ -1,8 +1,8 @@
 {
   "versao": "v2",
-  "ref_date": "2026-08-31",
+  "ref_date": "2026-11-20",
   "arquivo": "panel_v2.parquet",
-  "sha256": "5c44754dcb667135a987cca490c02dd2d6dcd5c2832691f016eff262d4a0924a",
+  "sha256": "c62c36a93ed20da0812b04c22ee33e048a3279393d87440d558613448cbdbaf3",
   "linhas": 1154428,
   "colunas": [
     "cell_id",
@@ -29,7 +29,8 @@
     "area_deter_3km_ha",
     "tempo_desde_fogo_anos",
     "y_queima",
-    "ref_date"
+    "ref_date",
+    "frac_sobreposicao_car"
   ],
   "catalogo": [
     {
@@ -83,10 +84,10 @@
     {
       "coluna": "frac_sobreposicao_car",
       "grupo": "fundiario",
-      "fonte": "SICAR / SEMAS-PA (nao acessivel)",
-      "resolucao": "-",
-      "janela": "-",
-      "tipo": "ausente_declarada"
+      "fonte": "SICAR / SEMAS-PA (via ver-o-car-api)",
+      "resolucao": "vetorial (mascara 250 m agregada 1000 m)",
+      "janela": "estatica (extrato 390k imoveis)",
+      "tipo": "feature"
     }
   ]
 }
