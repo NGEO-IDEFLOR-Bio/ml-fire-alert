@@ -33,6 +33,10 @@ class Settings:
     gee_project_id: str
     gee_credentials_json: Path | None
     artifacts_dir: Path
+    repo_root: Path = REPO_ROOT
+    deter_wfs: str = "https://terrabrasilis.dpi.inpe.br/geoserver/wfs"
+    # O plano cita "deter-amz-nb:deter_amz"; o namespace publicado e "deter-amz".
+    deter_typename: str = "deter-amz:deter_amz"
 
 
 def get_settings() -> Settings:

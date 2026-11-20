@@ -11,3 +11,4 @@ artifacts/*.tif
 *.egg-info/
 dist/
 build/
+artifacts/*.npz

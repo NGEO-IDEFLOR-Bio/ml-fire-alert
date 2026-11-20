@@ -198,6 +198,66 @@ FEATURE_CATALOG_V1: list[dict[str, str]] = [
 ]
 
 
+FEATURE_CATALOG_V2: list[dict[str, str]] = [
+    {
+        "coluna": "dist_deter_60d_m",
+        "grupo": "ignicao",
+        "fonte": "INPE / TerraBrasilis DETER-Amz (deter-amz:deter_amz)",
+        "resolucao": "vetorial (mascara 250 m)",
+        "janela": "60 dias anteriores",
+        "tipo": "feature",
+    },
+    {
+        "coluna": "area_deter_3km_ha",
+        "grupo": "ignicao",
+        "fonte": "INPE / DETER (area geodesica dos poligonos)",
+        "resolucao": "vetorial (raio 3 km)",
+        "janela": "60 dias anteriores",
+        "tipo": "feature_auxiliar",
+    },
+    {
+        "coluna": "dist_pastagem_m",
+        "grupo": "combustivel",
+        "fonte": "MapBiomas Colecao 11, classe 15 (pastagem)",
+        "resolucao": "30 m (mascara 250 m)",
+        "janela": "estatica",
+        "tipo": "feature",
+    },
+    {
+        "coluna": "frac_pastagem",
+        "grupo": "combustivel",
+        "fonte": "MapBiomas Colecao 11, classe 15 (pastagem)",
+        "resolucao": "30 m (agregado 1000 m)",
+        "janela": "estatica",
+        "tipo": "feature_auxiliar",
+    },
+    {
+        "coluna": "dist_estradas_m",
+        "grupo": "acesso",
+        "fonte": "OpenStreetMap via Geofabrik (ODbL)",
+        "resolucao": "vetorial (mascara 250 m)",
+        "janela": "estatica (extrato)",
+        "tipo": "feature",
+    },
+    {
+        "coluna": "tempo_desde_fogo_anos",
+        "grupo": "historico",
+        "fonte": "MapBiomas Fogo Colecao 5 (annual_burned)",
+        "resolucao": "30 m (agregado 1000 m)",
+        "janela": "serie 1985..ultimo ano",
+        "tipo": "feature",
+    },
+    {
+        "coluna": "frac_sobreposicao_car",
+        "grupo": "fundiario",
+        "fonte": "SICAR / SEMAS-PA (nao acessivel)",
+        "resolucao": "-",
+        "janela": "-",
+        "tipo": "ausente_declarada",
+    },
+]
+
+
 def sha256_file(path: Path) -> str:
     h = hashlib.sha256()
     with path.open("rb") as fh:
@@ -211,6 +271,7 @@ def write_parquet_with_digest(
     out_path: Path,
     ref_date: date,
     metadata_path: Path,
+    versao: str = "v1",
 ) -> dict[str, Any]:
     out_path.parent.mkdir(parents=True, exist_ok=True)
     metadata_path.parent.mkdir(parents=True, exist_ok=True)
@@ -219,13 +280,13 @@ def write_parquet_with_digest(
     digest = sha256_file(out_path)
 
     meta = {
-        "versao": "v1",
+        "versao": versao,
         "ref_date": ref_date.isoformat(),
         "arquivo": out_path.name,
         "sha256": digest,
         "linhas": int(len(df)),
         "colunas": list(df.columns),
-        "catalogo": FEATURE_CATALOG_V1,
+        "catalogo": FEATURE_CATALOG_V2 if versao == "v2" else FEATURE_CATALOG_V1,
     }
     metadata_path.write_text(json.dumps(meta, indent=2, ensure_ascii=False), encoding="utf-8")
     return meta

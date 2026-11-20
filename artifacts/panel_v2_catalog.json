@@ -1,0 +1,92 @@
+{
+  "versao": "v2",
+  "ref_date": "2026-08-31",
+  "arquivo": "panel_v2.parquet",
+  "sha256": "5c44754dcb667135a987cca490c02dd2d6dcd5c2832691f016eff262d4a0924a",
+  "linhas": 1154428,
+  "colunas": [
+    "cell_id",
+    "uc_id",
+    "dentro_uc",
+    "dentro_za",
+    "dist_borda_uc_m",
+    "x_5880",
+    "y_5880",
+    "lon",
+    "lat",
+    "uc_nome",
+    "gerencia_id",
+    "dist_pastagem_m",
+    "frac_pastagem",
+    "frac_floresta",
+    "declividade_deg",
+    "dist_estradas_m",
+    "chuva_30d_mm",
+    "vpd_kpa",
+    "lst_dia_c",
+    "nuvem_fracao_30d",
+    "dist_deter_60d_m",
+    "area_deter_3km_ha",
+    "tempo_desde_fogo_anos",
+    "y_queima",
+    "ref_date"
+  ],
+  "catalogo": [
+    {
+      "coluna": "dist_deter_60d_m",
+      "grupo": "ignicao",
+      "fonte": "INPE / TerraBrasilis DETER-Amz (deter-amz:deter_amz)",
+      "resolucao": "vetorial (mascara 250 m)",
+      "janela": "60 dias anteriores",
+      "tipo": "feature"
+    },
+    {
+      "coluna": "area_deter_3km_ha",
+      "grupo": "ignicao",
+      "fonte": "INPE / DETER (area geodesica dos poligonos)",
+      "resolucao": "vetorial (raio 3 km)",
+      "janela": "60 dias anteriores",
+      "tipo": "feature_auxiliar"
+    },
+    {
+      "coluna": "dist_pastagem_m",
+      "grupo": "combustivel",
+      "fonte": "MapBiomas Colecao 11, classe 15 (pastagem)",
+      "resolucao": "30 m (mascara 250 m)",
+      "janela": "estatica",
+      "tipo": "feature"
+    },
+    {
+      "coluna": "frac_pastagem",
+      "grupo": "combustivel",
+      "fonte": "MapBiomas Colecao 11, classe 15 (pastagem)",
+      "resolucao": "30 m (agregado 1000 m)",
+      "janela": "estatica",
+      "tipo": "feature_auxiliar"
+    },
+    {
+      "coluna": "dist_estradas_m",
+      "grupo": "acesso",
+      "fonte": "OpenStreetMap via Geofabrik (ODbL)",
+      "resolucao": "vetorial (mascara 250 m)",
+      "janela": "estatica (extrato)",
+      "tipo": "feature"
+    },
+    {
+      "coluna": "tempo_desde_fogo_anos",
+      "grupo": "historico",
+      "fonte": "MapBiomas Fogo Colecao 5 (annual_burned)",
+      "resolucao": "30 m (agregado 1000 m)",
+      "janela": "serie 1985..ultimo ano",
+      "tipo": "feature"
+    },
+    {
+      "coluna": "frac_sobreposicao_car",
+      "grupo": "fundiario",
+      "fonte": "SICAR / SEMAS-PA (nao acessivel)",
+      "resolucao": "-",
+      "janela": "-",
+      "tipo": "ausente_declarada"
+    }
+  ]
+}

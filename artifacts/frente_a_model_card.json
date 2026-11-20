@@ -1,0 +1,1754 @@
+{
+  "versao_modelo": "v2",
+  "data_treino": "2026-11-20",
+  "base_referencia": "Agosto/2026",
+  "algoritmo": "LightGBM + TreeSHAP + Calibracao Isotonica",
+  "metricas_validacao": {
+    "protocolo": "Spatial Block CV por UC",
+    "auc_pr": 0.027152,
+    "prevalencia_natural": 0.0017,
+    "recall_at_10pct": 0.737849,
+    "baseline_climatico_recall": 0.485981,
+    "auc_pr_desvio": 0.023709,
+    "auc_pr_por_fold": [
+      0.021237,
+      0.072018,
+      0.026146,
+      0.012743,
+      0.003616
+    ],
+    "recall_at_10pct_por_fold": [
+      0.277778,
+      0.874693,
+      0.865169,
+      0.898876,
+      0.772727
+    ],
+    "recall_at_10pct_por_uc": {
+      "media": 0.4323,
+      "ucs_avaliadas": 15,
+      "por_uc": {
+        "8": 0.2778,
+        "6": 0.8747,
+        "4": 0.0,
+        "11": 1.0,
+        "29": 0.0,
+        "9": 0.3333,
+        "18": 0.0484,
+        "22": 1.0,
+        "23": 0.0,
+        "5": 0.0385,
+        "12": 0.4118,
+        "13": 1.0,
+        "14": 0.5,
+        "26": 0.0,
+        "27": 1.0
+      }
+    },
+    "recall_at_10pct_v1_style": {
+      "media": 0.432547,
+      "ucs_avaliadas": 15,
+      "por_uc": {
+        "4": 0.375,
+        "5": 1.0,
+        "6": 0.0848,
+        "8": 0.2166,
+        "9": 0.0,
+        "11": 0.8194,
+        "12": 0.4118,
+        "13": 1.0,
+        "14": 0.5,
+        "18": 0.0806,
+        "22": 0.0,
+        "23": 0.0,
+        "26": 1.0,
+        "27": 1.0,
+        "29": 0.0
+      }
+    },
+    "curva_calibracao": {
+      "prob_media_predita": [
+        0.004488,
+        0.004537,
+        0.004547,
+        0.004597,
+        0.00632
+      ],
+      "fracao_positiva_observada": [
+        0.00028,
+        0.000117,
+        0.001654,
+        0.003023,
+        0.009648
+      ]
+    },
+    "brier": 0.003,
+    "n_celulas": 1154428,
+    "n_folds": 5,
+    "por_fold": [
+      {
+        "fold": 0,
+        "n_celulas": 97956,
+        "positivos": 882,
+        "prevalencia": 0.009004,
+        "auc_pr": 0.021237,
+        "brier": 0.008952,
+        "recall_at_10pct": 0.277778
+      },
+      {
+        "fold": 1,
+        "n_celulas": 263136,
+        "positivos": 814,
+        "prevalencia": 0.003093,
+        "auc_pr": 0.072018,
+        "brier": 0.003082,
+        "recall_at_10pct": 0.874693
+      },
+      {
+        "fold": 2,
+        "n_celulas": 42924,
+        "positivos": 89,
+        "prevalencia": 0.002073,
+        "auc_pr": 0.026146,
+        "brier": 0.002056,
+        "recall_at_10pct": 0.865169
+      },
+      {
+        "fold": 3,
+        "n_celulas": 233784,
+        "positivos": 89,
+        "prevalencia": 0.000381,
+        "auc_pr": 0.012743,
+        "brier": 0.00038,
+        "recall_at_10pct": 0.898876
+      },
+      {
+        "fold": 4,
+        "n_celulas": 516628,
+        "positivos": 88,
+        "prevalencia": 0.00017,
+        "auc_pr": 0.003616,
+        "brier": 0.000532,
+        "recall_at_10pct": 0.772727
+      }
+    ],
+    "detalhe_baseline": {
+      "auc_pr": 0.007259,
+      "auc_pr_por_fold": [
+        0.015693,
+        0.01389,
+        0.00372,
+        0.002207,
+        0.000786
+      ],
+      "recall_at_10pct": 0.485981,
+      "recall_at_10pct_por_fold": [
+        0.201814,
+        0.52457,
+        0.157303,
+        0.932584,
+        0.613636
+      ],
+      "brier": 0.002949
+    }
+  },
+  "features_utilizadas": [
+    "chuva_30d_mm",
+    "dist_deter_60d_m",
+    "dist_pastagem_m",
+    "dist_estradas_m",
+    "lst_dia_c",
+    "vpd_kpa",
+    "dist_borda_uc_m",
+    "frac_floresta",
+    "declividade_deg",
+    "tempo_desde_fogo_anos"
+  ],
+  "top_drivers_ucs": {
+    "1": [
+      {
+        "feature": "dist_pastagem_m",
+        "mean_shap": 0.65096
+      },
+      {
+        "feature": "dist_estradas_m",
+        "mean_shap": 0.52952
+      },
+      {
+        "feature": "chuva_30d_mm",
+        "mean_shap": -0.26233
+      },
+      {
+        "feature": "dist_borda_uc_m",
+        "mean_shap": -0.17109
+      },
+      {
+        "feature": "declividade_deg",
+        "mean_shap": 0.15072
+      }
+    ],
+    "2": [
+      {
+        "feature": "dist_pastagem_m",
+        "mean_shap": 0.72235
+      },
+      {
+        "feature": "dist_estradas_m",
+        "mean_shap": 0.54688
+      },
+      {
+        "feature": "lst_dia_c",
+        "mean_shap": 0.42192
+      },
+      {
+        "feature": "vpd_kpa",
+        "mean_shap": -0.23889
+      },
+      {
+        "feature": "dist_borda_uc_m",
+        "mean_shap": -0.20841
+      }
+    ],
+    "3": [
+      {
+        "feature": "dist_estradas_m",
+        "mean_shap": 0.69211
+      },
+      {
+        "feature": "dist_pastagem_m",
+        "mean_shap": 0.46304
+      },
+      {
+        "feature": "vpd_kpa",
+        "mean_shap": -0.35067
+      },
+      {
+        "feature": "frac_floresta",
+        "mean_shap": 0.27288
+      },
+      {
+        "feature": "dist_borda_uc_m",
+        "mean_shap": -0.25656
+      }
+    ],
+    "4": [
+      {
+        "feature": "dist_pastagem_m",
+        "mean_shap": 0.86064
+      },
+      {
+        "feature": "dist_estradas_m",
+        "mean_shap": 0.81845
+      },
+      {
+        "feature": "lst_dia_c",
+        "mean_shap": 0.63549
+      },
+      {
+        "feature": "tempo_desde_fogo_anos",
+        "mean_shap": 0.57263
+      },
+      {
+        "feature": "vpd_kpa",
+        "mean_shap": 0.50322
+      }
+    ],
+    "5": [
+      {
+        "feature": "tempo_desde_fogo_anos",
+        "mean_shap": 0.72175
+      },
+      {
+        "feature": "dist_pastagem_m",
+        "mean_shap": 0.66833
+      },
+      {
+        "feature": "dist_estradas_m",
+        "mean_shap": 0.63744
+      },
+      {
+        "feature": "chuva_30d_mm",
+        "mean_shap": 0.4992
+      },
+      {
+        "feature": "lst_dia_c",
+        "mean_shap": 0.30697
+      }
+    ],
+    "6": [
+      {
+        "feature": "chuva_30d_mm",
+        "mean_shap": -0.23014
+      },
+      {
+        "feature": "frac_floresta",
+        "mean_shap": 0.16111
+      },
+      {
+        "feature": "dist_pastagem_m",
+        "mean_shap": 0.12745
+      },
+      {
+        "feature": "declividade_deg",
+        "mean_shap": 0.0886
+      },
+      {
+        "feature": "lst_dia_c",
+        "mean_shap": 0.08525
+      }
+    ],
+    "7": [
+      {
+        "feature": "dist_pastagem_m",
+        "mean_shap": 0.56811
+      },
+      {
+        "feature": "dist_estradas_m",
+        "mean_shap": 0.55062
+      },
+      {
+        "feature": "tempo_desde_fogo_anos",
+        "mean_shap": 0.39635
+      },
+      {
+        "feature": "frac_floresta",
+        "mean_shap": 0.27769
+      },
+      {
+        "feature": "lst_dia_c",
+        "mean_shap": 0.17256
+      }
+    ],
+    "8": [
+      {
+        "feature": "tempo_desde_fogo_anos",
+        "mean_shap": 1.04493
+      },
+      {
+        "feature": "dist_pastagem_m",
+        "mean_shap": 0.71179
+      },
+      {
+        "feature": "chuva_30d_mm",
+        "mean_shap": 0.68094
+      },
+      {
+        "feature": "dist_estradas_m",
+        "mean_shap": 0.64816
+      },
+      {
+        "feature": "vpd_kpa",
+        "mean_shap": 0.46182
+      }
+    ],
+    "9": [
+      {
+        "feature": "dist_pastagem_m",
+        "mean_shap": -0.3779
+      },
+      {
+        "feature": "dist_estradas_m",
+        "mean_shap": -0.34528
+      },
+      {
+        "feature": "tempo_desde_fogo_anos",
+        "mean_shap": -0.28623
+      },
+      {
+        "feature": "chuva_30d_mm",
+        "mean_shap": -0.14297
+      },
+      {
+        "feature": "vpd_kpa",
+        "mean_shap": -0.09119
+      }
+    ],
+    "10": [
+      {
+        "feature": "dist_pastagem_m",
+        "mean_shap": 0.33621
+      },
+      {
+        "feature": "dist_estradas_m",
+        "mean_shap": 0.1521
+      },
+      {
+        "feature": "frac_floresta",
+        "mean_shap": -0.11583
+      },
+      {
+        "feature": "tempo_desde_fogo_anos",
+        "mean_shap": -0.08775
+      },
+      {
+        "feature": "chuva_30d_mm",
+        "mean_shap": -0.05984
+      }
+    ],
+    "11": [
+      {
+        "feature": "chuva_30d_mm",
+        "mean_shap": 0.39702
+      },
+      {
+        "feature": "lst_dia_c",
+        "mean_shap": -0.31956
+      },
+      {
+        "feature": "tempo_desde_fogo_anos",
+        "mean_shap": -0.28626
+      },
+      {
+        "feature": "dist_estradas_m",
+        "mean_shap": 0.16831
+      },
+      {
+        "feature": "frac_floresta",
+        "mean_shap": -0.14071
+      }
+    ],
+    "12": [
+      {
+        "feature": "dist_estradas_m",
+        "mean_shap": -0.26922
+      },
+      {
+        "feature": "tempo_desde_fogo_anos",
+        "mean_shap": -0.1961
+      },
+      {
+        "feature": "vpd_kpa",
+        "mean_shap": -0.091
+      },
+      {
+        "feature": "dist_deter_60d_m",
+        "mean_shap": 0.08416
+      },
+      {
+        "feature": "frac_floresta",
+        "mean_shap": -0.08317
+      }
+    ],
+    "13": [
+      {
+        "feature": "tempo_desde_fogo_anos",
+        "mean_shap": -0.29381
+      },
+      {
+        "feature": "dist_pastagem_m",
+        "mean_shap": -0.25786
+      },
+      {
+        "feature": "vpd_kpa",
+        "mean_shap": -0.17818
+      },
+      {
+        "feature": "dist_estradas_m",
+        "mean_shap": -0.16338
+      },
+      {
+        "feature": "lst_dia_c",
+        "mean_shap": -0.16127
+      }
+    ],
+    "14": [
+      {
+        "feature": "dist_estradas_m",
+        "mean_shap": -0.41426
+      },
+      {
+        "feature": "tempo_desde_fogo_anos",
+        "mean_shap": -0.25441
+      },
+      {
+        "feature": "dist_pastagem_m",
+        "mean_shap": 0.21542
+      },
+      {
+        "feature": "vpd_kpa",
+        "mean_shap": -0.15378
+      },
+      {
+        "feature": "frac_floresta",
+        "mean_shap": -0.10894
+      }
+    ],
+    "15": [
+      {
+        "feature": "dist_estradas_m",
+        "mean_shap": 0.75531
+      },
+      {
+        "feature": "dist_pastagem_m",
+        "mean_shap": 0.52482
+      },
+      {
+        "feature": "dist_borda_uc_m",
+        "mean_shap": -0.30269
+      },
+      {
+        "feature": "frac_floresta",
+        "mean_shap": 0.23546
+      },
+      {
+        "feature": "vpd_kpa",
+        "mean_shap": -0.17857
+      }
+    ],
+    "16": [
+      {
+        "feature": "dist_estradas_m",
+        "mean_shap": -0.41696
+      },
+      {
+        "feature": "chuva_30d_mm",
+        "mean_shap": -0.3105
+      },
+      {
+        "feature": "tempo_desde_fogo_anos",
+        "mean_shap": -0.26013
+      },
+      {
+        "feature": "dist_pastagem_m",
+        "mean_shap": -0.16658
+      },
+      {
+        "feature": "frac_floresta",
+        "mean_shap": -0.08129
+      }
+    ],
+    "17": [
+      {
+        "feature": "chuva_30d_mm",
+        "mean_shap": -0.41943
+      },
+      {
+        "feature": "dist_estradas_m",
+        "mean_shap": -0.41162
+      },
+      {
+        "feature": "dist_pastagem_m",
+        "mean_shap": -0.29079
+      },
+      {
+        "feature": "tempo_desde_fogo_anos",
+        "mean_shap": -0.26073
+      },
+      {
+        "feature": "declividade_deg",
+        "mean_shap": 0.15478
+      }
+    ],
+    "18": [
+      {
+        "feature": "tempo_desde_fogo_anos",
+        "mean_shap": 1.44654
+      },
+      {
+        "feature": "dist_estradas_m",
+        "mean_shap": 0.83454
+      },
+      {
+        "feature": "dist_pastagem_m",
+        "mean_shap": 0.76497
+      },
+      {
+        "feature": "lst_dia_c",
+        "mean_shap": 0.66756
+      },
+      {
+        "feature": "vpd_kpa",
+        "mean_shap": 0.63609
+      }
+    ],
+    "19": [
+      {
+        "feature": "dist_pastagem_m",
+        "mean_shap": 0.91426
+      },
+      {
+        "feature": "dist_estradas_m",
+        "mean_shap": 0.50524
+      },
+      {
+        "feature": "lst_dia_c",
+        "mean_shap": 0.41449
+      },
+      {
+        "feature": "frac_floresta",
+        "mean_shap": 0.14891
+      },
+      {
+        "feature": "chuva_30d_mm",
+        "mean_shap": -0.14544
+      }
+    ],
+    "20": [
+      {
+        "feature": "dist_estradas_m",
+        "mean_shap": 0.8057
+      },
+      {
+        "feature": "dist_pastagem_m",
+        "mean_shap": 0.80385
+      },
+      {
+        "feature": "lst_dia_c",
+        "mean_shap": 0.30758
+      },
+      {
+        "feature": "frac_floresta",
+        "mean_shap": 0.21964
+      },
+      {
+        "feature": "tempo_desde_fogo_anos",
+        "mean_shap": 0.21416
+      }
+    ],
+    "21": [
+      {
+        "feature": "dist_pastagem_m",
+        "mean_shap": 0.62875
+      },
+      {
+        "feature": "tempo_desde_fogo_anos",
+        "mean_shap": 0.50037
+      },
+      {
+        "feature": "dist_estradas_m",
+        "mean_shap": 0.46826
+      },
+      {
+        "feature": "chuva_30d_mm",
+        "mean_shap": -0.25083
+      },
+      {
+        "feature": "dist_borda_uc_m",
+        "mean_shap": -0.19261
+      }
+    ],
+    "22": [
+      {
+        "feature": "tempo_desde_fogo_anos",
+        "mean_shap": 1.34342
+      },
+      {
+        "feature": "dist_estradas_m",
+        "mean_shap": 0.59496
+      },
+      {
+        "feature": "dist_pastagem_m",
+        "mean_shap": 0.56644
+      },
+      {
+        "feature": "lst_dia_c",
+        "mean_shap": 0.24533
+      },
+      {
+        "feature": "vpd_kpa",
+        "mean_shap": -0.22827
+      }
+    ],
+    "23": [
+      {
+        "feature": "dist_estradas_m",
+        "mean_shap": 0.59575
+      },
+      {
+        "feature": "dist_pastagem_m",
+        "mean_shap": 0.54402
+      },
+      {
+        "feature": "chuva_30d_mm",
+        "mean_shap": 0.39679
+      },
+      {
+        "feature": "dist_deter_60d_m",
+        "mean_shap": 0.19669
+      },
+      {
+        "feature": "vpd_kpa",
+        "mean_shap": 0.19028
+      }
+    ],
+    "24": [
+      {
+        "feature": "dist_pastagem_m",
+        "mean_shap": 0.70214
+      },
+      {
+        "feature": "dist_estradas_m",
+        "mean_shap": 0.4693
+      },
+      {
+        "feature": "tempo_desde_fogo_anos",
+        "mean_shap": 0.30567
+      },
+      {
+        "feature": "frac_floresta",
+        "mean_shap": 0.19672
+      },
+      {
+        "feature": "vpd_kpa",
+        "mean_shap": -0.1917
+      }
+    ],
+    "25": [
+      {
+        "feature": "dist_estradas_m",
+        "mean_shap": -0.41742
+      },
+      {
+        "feature": "tempo_desde_fogo_anos",
+        "mean_shap": -0.29181
+      },
+      {
+        "feature": "dist_pastagem_m",
+        "mean_shap": -0.17694
+      },
+      {
+        "feature": "lst_dia_c",
+        "mean_shap": 0.11105
+      },
+      {
+        "feature": "frac_floresta",
+        "mean_shap": -0.09394
+      }
+    ],
+    "26": [
+      {
+        "feature": "tempo_desde_fogo_anos",
+        "mean_shap": 1.00351
+      },
+      {
+        "feature": "dist_pastagem_m",
+        "mean_shap": 0.61057
+      },
+      {
+        "feature": "dist_estradas_m",
+        "mean_shap": 0.48369
+      },
+      {
+        "feature": "chuva_30d_mm",
+        "mean_shap": 0.4012
+      },
+      {
+        "feature": "frac_floresta",
+        "mean_shap": 0.2317
+      }
+    ],
+    "27": [
+      {
+        "feature": "tempo_desde_fogo_anos",
+        "mean_shap": 0.79195
+      },
+      {
+        "feature": "dist_pastagem_m",
+        "mean_shap": 0.63648
+      },
+      {
+        "feature": "dist_estradas_m",
+        "mean_shap": 0.58724
+      },
+      {
+        "feature": "dist_borda_uc_m",
+        "mean_shap": -0.19813
+      },
+      {
+        "feature": "vpd_kpa",
+        "mean_shap": -0.1456
+      }
+    ],
+    "28": [
+      {
+        "feature": "dist_pastagem_m",
+        "mean_shap": 0.87978
+      },
+      {
+        "feature": "dist_estradas_m",
+        "mean_shap": 0.61264
+      },
+      {
+        "feature": "chuva_30d_mm",
+        "mean_shap": 0.48168
+      },
+      {
+        "feature": "lst_dia_c",
+        "mean_shap": 0.39903
+      },
+      {
+        "feature": "tempo_desde_fogo_anos",
+        "mean_shap": 0.36803
+      }
+    ],
+    "29": [
+      {
+        "feature": "dist_pastagem_m",
+        "mean_shap": 0.65996
+      },
+      {
+        "feature": "tempo_desde_fogo_anos",
+        "mean_shap": 0.58273
+      },
+      {
+        "feature": "dist_estradas_m",
+        "mean_shap": 0.56918
+      },
+      {
+        "feature": "vpd_kpa",
+        "mean_shap": -0.36075
+      },
+      {
+        "feature": "frac_floresta",
+        "mean_shap": 0.17605
+      }
+    ]
+  },
+  "versao": "v2",
+  "alvo": "P(ignicao na UC nos proximos 30 dias)",
+  "ref_date": "2026-08-31",
+  "validade_ate": "2026-09-30",
+  "dataset": {
+    "sha256": "5c44754dcb667135a987cca490c02dd2d6dcd5c2832691f016eff262d4a0924a",
+    "linhas": 1154428,
+    "positivos": 1962,
+    "ref_dates": [
+      "2026-05-31",
+      "2026-06-30",
+      "2026-07-31",
+      "2026-08-31"
+    ]
+  },
+  "features": [
+    "chuva_30d_mm",
+    "dist_deter_60d_m",
+    "dist_pastagem_m",
+    "dist_estradas_m",
+    "lst_dia_c",
+    "vpd_kpa",
+    "dist_borda_uc_m",
+    "frac_floresta",
+    "declividade_deg",
+    "tempo_desde_fogo_anos",
+    "nuvem_fracao_30d"
+  ],
+  "nuisance_features_removidas_do_shap": [
+    "nuvem_fracao_30d"
+  ],
+  "hiperparametros": {
+    "num_leaves": 31,
+    "min_child_samples": 400,
+    "learning_rate": 0.03,
+    "melhor_iteracao": 607,
+    "grade": []
+  },
+  "metricas": {
+    "n_celulas": 1154428,
+    "n_folds": 5,
+    "prevalencia": 0.0017,
+    "auc_pr": 0.027152,
+    "auc_pr_desvio": 0.023709,
+    "auc_pr_por_fold": [
+      0.021237,
+      0.072018,
+      0.026146,
+      0.012743,
+      0.003616
+    ],
+    "brier": 0.003,
+    "recall_at_10pct": 0.737849,
+    "recall_at_10pct_por_fold": [
+      0.277778,
+      0.874693,
+      0.865169,
+      0.898876,
+      0.772727
+    ],
+    "recall_at_10pct_por_uc": {
+      "media": 0.4323,
+      "ucs_avaliadas": 15,
+      "por_uc": {
+        "8": 0.2778,
+        "6": 0.8747,
+        "4": 0.0,
+        "11": 1.0,
+        "29": 0.0,
+        "9": 0.3333,
+        "18": 0.0484,
+        "22": 1.0,
+        "23": 0.0,
+        "5": 0.0385,
+        "12": 0.4118,
+        "13": 1.0,
+        "14": 0.5,
+        "26": 0.0,
+        "27": 1.0
+      }
+    },
+    "recall_at_10pct_v1_style": {
+      "media": 0.432547,
+      "ucs_avaliadas": 15,
+      "por_uc": {
+        "4": 0.375,
+        "5": 1.0,
+        "6": 0.0848,
+        "8": 0.2166,
+        "9": 0.0,
+        "11": 0.8194,
+        "12": 0.4118,
+        "13": 1.0,
+        "14": 0.5,
+        "18": 0.0806,
+        "22": 0.0,
+        "23": 0.0,
+        "26": 1.0,
+        "27": 1.0,
+        "29": 0.0
+      }
+    },
+    "curva_calibracao": {
+      "prob_media_predita": [
+        0.004488,
+        0.004537,
+        0.004547,
+        0.004597,
+        0.00632
+      ],
+      "fracao_positiva_observada": [
+        0.00028,
+        0.000117,
+        0.001654,
+        0.003023,
+        0.009648
+      ]
+    },
+    "por_fold": [
+      {
+        "fold": 0,
+        "n_celulas": 97956,
+        "positivos": 882,
+        "prevalencia": 0.009004,
+        "auc_pr": 0.021237,
+        "brier": 0.008952,
+        "recall_at_10pct": 0.277778
+      },
+      {
+        "fold": 1,
+        "n_celulas": 263136,
+        "positivos": 814,
+        "prevalencia": 0.003093,
+        "auc_pr": 0.072018,
+        "brier": 0.003082,
+        "recall_at_10pct": 0.874693
+      },
+      {
+        "fold": 2,
+        "n_celulas": 42924,
+        "positivos": 89,
+        "prevalencia": 0.002073,
+        "auc_pr": 0.026146,
+        "brier": 0.002056,
+        "recall_at_10pct": 0.865169
+      },
+      {
+        "fold": 3,
+        "n_celulas": 233784,
+        "positivos": 89,
+        "prevalencia": 0.000381,
+        "auc_pr": 0.012743,
+        "brier": 0.00038,
+        "recall_at_10pct": 0.898876
+      },
+      {
+        "fold": 4,
+        "n_celulas": 516628,
+        "positivos": 88,
+        "prevalencia": 0.00017,
+        "auc_pr": 0.003616,
+        "brier": 0.000532,
+        "recall_at_10pct": 0.772727
+      }
+    ],
+    "baseline_climatico_recall": 0.485981,
+    "baseline_climatico": {
+      "auc_pr": 0.007259,
+      "auc_pr_por_fold": [
+        0.015693,
+        0.01389,
+        0.00372,
+        0.002207,
+        0.000786
+      ],
+      "recall_at_10pct": 0.485981,
+      "recall_at_10pct_por_fold": [
+        0.201814,
+        0.52457,
+        0.157303,
+        0.932584,
+        0.613636
+      ],
+      "brier": 0.002949
+    }
+  },
+  "shap": {
+    "global_top": [
+      {
+        "feature": "dist_pastagem_m",
+        "mean_abs_shap": 0.22381
+      },
+      {
+        "feature": "dist_estradas_m",
+        "mean_abs_shap": 0.12529
+      },
+      {
+        "feature": "tempo_desde_fogo_anos",
+        "mean_abs_shap": 0.10356
+      },
+      {
+        "feature": "lst_dia_c",
+        "mean_abs_shap": 0.06889
+      },
+      {
+        "feature": "dist_deter_60d_m",
+        "mean_abs_shap": 0.04835
+      }
+    ],
+    "local_por_uc": {
+      "1": {
+        "uc_nome": "Área de Proteção Ambiental da Ilha de Combu",
+        "top_drivers": [
+          {
+            "feature": "dist_pastagem_m",
+            "mean_shap": 0.65096
+          },
+          {
+            "feature": "dist_estradas_m",
+            "mean_shap": 0.52952
+          },
+          {
+            "feature": "chuva_30d_mm",
+            "mean_shap": -0.26233
+          },
+          {
+            "feature": "dist_borda_uc_m",
+            "mean_shap": -0.17109
+          },
+          {
+            "feature": "declividade_deg",
+            "mean_shap": 0.15072
+          }
+        ]
+      },
+      "2": {
+        "uc_nome": "Área de Proteção Ambiental da Região Metropolitana de Belém",
+        "top_drivers": [
+          {
+            "feature": "dist_pastagem_m",
+            "mean_shap": 0.72235
+          },
+          {
+            "feature": "dist_estradas_m",
+            "mean_shap": 0.54688
+          },
+          {
+            "feature": "lst_dia_c",
+            "mean_shap": 0.42192
+          },
+          {
+            "feature": "vpd_kpa",
+            "mean_shap": -0.23889
+          },
+          {
+            "feature": "dist_borda_uc_m",
+            "mean_shap": -0.20841
+          }
+        ]
+      },
+      "3": {
+        "uc_nome": "Área de Proteção Ambiental de Algodoal-Maiandeua",
+        "top_drivers": [
+          {
+            "feature": "dist_estradas_m",
+            "mean_shap": 0.69211
+          },
+          {
+            "feature": "dist_pastagem_m",
+            "mean_shap": 0.46304
+          },
+          {
+            "feature": "vpd_kpa",
+            "mean_shap": -0.35067
+          },
+          {
+            "feature": "frac_floresta",
+            "mean_shap": 0.27288
+          },
+          {
+            "feature": "dist_borda_uc_m",
+            "mean_shap": -0.25656
+          }
+        ]
+      },
+      "4": {
+        "uc_nome": "Área de Proteção Ambiental de São Geraldo do Araguaia – APA Araguaia",
+        "top_drivers": [
+          {
+            "feature": "dist_pastagem_m",
+            "mean_shap": 0.86064
+          },
+          {
+            "feature": "dist_estradas_m",
+            "mean_shap": 0.81845
+          },
+          {
+            "feature": "lst_dia_c",
+            "mean_shap": 0.63549
+          },
+          {
+            "feature": "tempo_desde_fogo_anos",
+            "mean_shap": 0.57263
+          },
+          {
+            "feature": "vpd_kpa",
+            "mean_shap": 0.50322
+          }
+        ]
+      },
+      "5": {
+        "uc_nome": "Área de Proteção Ambiental do Lago de Tucuruí",
+        "top_drivers": [
+          {
+            "feature": "tempo_desde_fogo_anos",
+            "mean_shap": 0.72175
+          },
+          {
+            "feature": "dist_pastagem_m",
+            "mean_shap": 0.66833
+          },
+          {
+            "feature": "dist_estradas_m",
+            "mean_shap": 0.63744
+          },
+          {
+            "feature": "chuva_30d_mm",
+            "mean_shap": 0.4992
+          },
+          {
+            "feature": "lst_dia_c",
+            "mean_shap": 0.30697
+          }
+        ]
+      },
+      "6": {
+        "uc_nome": "Área de Proteção Ambiental do Marajó",
+        "top_drivers": [
+          {
+            "feature": "chuva_30d_mm",
+            "mean_shap": -0.23014
+          },
+          {
+            "feature": "frac_floresta",
+            "mean_shap": 0.16111
+          },
+          {
+            "feature": "dist_pastagem_m",
+            "mean_shap": 0.12745
+          },
+          {
+            "feature": "declividade_deg",
+            "mean_shap": 0.0886
+          },
+          {
+            "feature": "lst_dia_c",
+            "mean_shap": 0.08525
+          }
+        ]
+      },
+      "7": {
+        "uc_nome": "Área de Proteção Ambiental Paytuna",
+        "top_drivers": [
+          {
+            "feature": "dist_pastagem_m",
+            "mean_shap": 0.56811
+          },
+          {
+            "feature": "dist_estradas_m",
+            "mean_shap": 0.55062
+          },
+          {
+            "feature": "tempo_desde_fogo_anos",
+            "mean_shap": 0.39635
+          },
+          {
+            "feature": "frac_floresta",
+            "mean_shap": 0.27769
+          },
+          {
+            "feature": "lst_dia_c",
+            "mean_shap": 0.17256
+          }
+        ]
+      },
+      "8": {
+        "uc_nome": "Área de Proteção Ambiental Triunfo do Xingu",
+        "top_drivers": [
+          {
+            "feature": "tempo_desde_fogo_anos",
+            "mean_shap": 1.04493
+          },
+          {
+            "feature": "dist_pastagem_m",
+            "mean_shap": 0.71179
+          },
+          {
+            "feature": "chuva_30d_mm",
+            "mean_shap": 0.68094
+          },
+          {
+            "feature": "dist_estradas_m",
+            "mean_shap": 0.64816
+          },
+          {
+            "feature": "vpd_kpa",
+            "mean_shap": 0.46182
+          }
+        ]
+      },
+      "9": {
+        "uc_nome": "Estação Ecológica do Grão-Pará (ESEC)",
+        "top_drivers": [
+          {
+            "feature": "dist_pastagem_m",
+            "mean_shap": -0.3779
+          },
+          {
+            "feature": "dist_estradas_m",
+            "mean_shap": -0.34528
+          },
+          {
+            "feature": "tempo_desde_fogo_anos",
+            "mean_shap": -0.28623
+          },
+          {
+            "feature": "chuva_30d_mm",
+            "mean_shap": -0.14297
+          },
+          {
+            "feature": "vpd_kpa",
+            "mean_shap": -0.09119
+          }
+        ]
+      },
+      "10": {
+        "uc_nome": "Estação Ecológica Mamuru (ESEC)",
+        "top_drivers": [
+          {
+            "feature": "dist_pastagem_m",
+            "mean_shap": 0.33621
+          },
+          {
+            "feature": "dist_estradas_m",
+            "mean_shap": 0.1521
+          },
+          {
+            "feature": "frac_floresta",
+            "mean_shap": -0.11583
+          },
+          {
+            "feature": "tempo_desde_fogo_anos",
+            "mean_shap": -0.08775
+          },
+          {
+            "feature": "chuva_30d_mm",
+            "mean_shap": -0.05984
+          }
+        ]
+      },
+      "11": {
+        "uc_nome": "Floresta Estadual do Iriri",
+        "top_drivers": [
+          {
+            "feature": "chuva_30d_mm",
+            "mean_shap": 0.39702
+          },
+          {
+            "feature": "lst_dia_c",
+            "mean_shap": -0.31956
+          },
+          {
+            "feature": "tempo_desde_fogo_anos",
+            "mean_shap": -0.28626
+          },
+          {
+            "feature": "dist_estradas_m",
+            "mean_shap": 0.16831
+          },
+          {
+            "feature": "frac_floresta",
+            "mean_shap": -0.14071
+          }
+        ]
+      },
+      "12": {
+        "uc_nome": "Floresta Estadual do Paru",
+        "top_drivers": [
+          {
+            "feature": "dist_estradas_m",
+            "mean_shap": -0.26922
+          },
+          {
+            "feature": "tempo_desde_fogo_anos",
+            "mean_shap": -0.1961
+          },
+          {
+            "feature": "vpd_kpa",
+            "mean_shap": -0.091
+          },
+          {
+            "feature": "dist_deter_60d_m",
+            "mean_shap": 0.08416
+          },
+          {
+            "feature": "frac_floresta",
+            "mean_shap": -0.08317
+          }
+        ]
+      },
+      "13": {
+        "uc_nome": "Floresta Estadual do Trombetas",
+        "top_drivers": [
+          {
+            "feature": "tempo_desde_fogo_anos",
+            "mean_shap": -0.29381
+          },
+          {
+            "feature": "dist_pastagem_m",
+            "mean_shap": -0.25786
+          },
+          {
+            "feature": "vpd_kpa",
+            "mean_shap": -0.17818
+          },
+          {
+            "feature": "dist_estradas_m",
+            "mean_shap": -0.16338
+          },
+          {
+            "feature": "lst_dia_c",
+            "mean_shap": -0.16127
+          }
+        ]
+      },
+      "14": {
+        "uc_nome": "Flota Estadual de Faro",
+        "top_drivers": [
+          {
+            "feature": "dist_estradas_m",
+            "mean_shap": -0.41426
+          },
+          {
+            "feature": "tempo_desde_fogo_anos",
+            "mean_shap": -0.25441
+          },
+          {
+            "feature": "dist_pastagem_m",
+            "mean_shap": 0.21542
+          },
+          {
+            "feature": "vpd_kpa",
+            "mean_shap": -0.15378
+          },
+          {
+            "feature": "frac_floresta",
+            "mean_shap": -0.10894
+          }
+        ]
+      },
+      "15": {
+        "uc_nome": "Monumento Natural Atalaia (MONA)",
+        "top_drivers": [
+          {
+            "feature": "dist_estradas_m",
+            "mean_shap": 0.75531
+          },
+          {
+            "feature": "dist_pastagem_m",
+            "mean_shap": 0.52482
+          },
+          {
+            "feature": "dist_borda_uc_m",
+            "mean_shap": -0.30269
+          },
+          {
+            "feature": "frac_floresta",
+            "mean_shap": 0.23546
+          },
+          {
+            "feature": "vpd_kpa",
+            "mean_shap": -0.17857
+          }
+        ]
+      },
+      "16": {
+        "uc_nome": "Parque Estadual Ambiental das Árvores Gigantes da Amazônia (PAGAM)",
+        "top_drivers": [
+          {
+            "feature": "dist_estradas_m",
+            "mean_shap": -0.41696
+          },
+          {
+            "feature": "chuva_30d_mm",
+            "mean_shap": -0.3105
+          },
+          {
+            "feature": "tempo_desde_fogo_anos",
+            "mean_shap": -0.26013
+          },
+          {
+            "feature": "dist_pastagem_m",
+            "mean_shap": -0.16658
+          },
+          {
+            "feature": "frac_floresta",
+            "mean_shap": -0.08129
+          }
+        ]
+      },
+      "17": {
+        "uc_nome": "Parque Estadual Charapucu",
+        "top_drivers": [
+          {
+            "feature": "chuva_30d_mm",
+            "mean_shap": -0.41943
+          },
+          {
+            "feature": "dist_estradas_m",
+            "mean_shap": -0.41162
+          },
+          {
+            "feature": "dist_pastagem_m",
+            "mean_shap": -0.29079
+          },
+          {
+            "feature": "tempo_desde_fogo_anos",
+            "mean_shap": -0.26073
+          },
+          {
+            "feature": "declividade_deg",
+            "mean_shap": 0.15478
+          }
+        ]
+      },
+      "18": {
+        "uc_nome": "Parque Estadual da Serra dos Martírios/Andorinhas",
+        "top_drivers": [
+          {
+            "feature": "tempo_desde_fogo_anos",
+            "mean_shap": 1.44654
+          },
+          {
+            "feature": "dist_estradas_m",
+            "mean_shap": 0.83454
+          },
+          {
+            "feature": "dist_pastagem_m",
+            "mean_shap": 0.76497
+          },
+          {
+            "feature": "lst_dia_c",
+            "mean_shap": 0.66756
+          },
+          {
+            "feature": "vpd_kpa",
+            "mean_shap": 0.63609
+          }
+        ]
+      },
+      "19": {
+        "uc_nome": "Parque Estadual do Utinga “Camillo Vianna”",
+        "top_drivers": [
+          {
+            "feature": "dist_pastagem_m",
+            "mean_shap": 0.91426
+          },
+          {
+            "feature": "dist_estradas_m",
+            "mean_shap": 0.50524
+          },
+          {
+            "feature": "lst_dia_c",
+            "mean_shap": 0.41449
+          },
+          {
+            "feature": "frac_floresta",
+            "mean_shap": 0.14891
+          },
+          {
+            "feature": "chuva_30d_mm",
+            "mean_shap": -0.14544
+          }
+        ]
+      },
+      "20": {
+        "uc_nome": "Parque Estadual Monte Alegre – PEMA",
+        "top_drivers": [
+          {
+            "feature": "dist_estradas_m",
+            "mean_shap": 0.8057
+          },
+          {
+            "feature": "dist_pastagem_m",
+            "mean_shap": 0.80385
+          },
+          {
+            "feature": "lst_dia_c",
+            "mean_shap": 0.30758
+          },
+          {
+            "feature": "frac_floresta",
+            "mean_shap": 0.21964
+          },
+          {
+            "feature": "tempo_desde_fogo_anos",
+            "mean_shap": 0.21416
+          }
+        ]
+      },
+      "21": {
+        "uc_nome": "Refúgio de Vida Silvestre Metrópole da Amazônia (REVIS)",
+        "top_drivers": [
+          {
+            "feature": "dist_pastagem_m",
+            "mean_shap": 0.62875
+          },
+          {
+            "feature": "tempo_desde_fogo_anos",
+            "mean_shap": 0.50037
+          },
+          {
+            "feature": "dist_estradas_m",
+            "mean_shap": 0.46826
+          },
+          {
+            "feature": "chuva_30d_mm",
+            "mean_shap": -0.25083
+          },
+          {
+            "feature": "dist_borda_uc_m",
+            "mean_shap": -0.19261
+          }
+        ]
+      },
+      "22": {
+        "uc_nome": "Refúgio de Vida Silvestre Padre Sérgio Tonetto",
+        "top_drivers": [
+          {
+            "feature": "tempo_desde_fogo_anos",
+            "mean_shap": 1.34342
+          },
+          {
+            "feature": "dist_estradas_m",
+            "mean_shap": 0.59496
+          },
+          {
+            "feature": "dist_pastagem_m",
+            "mean_shap": 0.56644
+          },
+          {
+            "feature": "lst_dia_c",
+            "mean_shap": 0.24533
+          },
+          {
+            "feature": "vpd_kpa",
+            "mean_shap": -0.22827
+          }
+        ]
+      },
+      "23": {
+        "uc_nome": "Refúgio de Vida Silvestre Rios São Benedito e Azul  (REVIS)",
+        "top_drivers": [
+          {
+            "feature": "dist_estradas_m",
+            "mean_shap": 0.59575
+          },
+          {
+            "feature": "dist_pastagem_m",
+            "mean_shap": 0.54402
+          },
+          {
+            "feature": "chuva_30d_mm",
+            "mean_shap": 0.39679
+          },
+          {
+            "feature": "dist_deter_60d_m",
+            "mean_shap": 0.19669
+          },
+          {
+            "feature": "vpd_kpa",
+            "mean_shap": 0.19028
+          }
+        ]
+      },
+      "24": {
+        "uc_nome": "Refúgio de Vida Silvestre Tabuleiro do Embaubal (REVIS)",
+        "top_drivers": [
+          {
+            "feature": "dist_pastagem_m",
+            "mean_shap": 0.70214
+          },
+          {
+            "feature": "dist_estradas_m",
+            "mean_shap": 0.4693
+          },
+          {
+            "feature": "tempo_desde_fogo_anos",
+            "mean_shap": 0.30567
+          },
+          {
+            "feature": "frac_floresta",
+            "mean_shap": 0.19672
+          },
+          {
+            "feature": "vpd_kpa",
+            "mean_shap": -0.1917
+          }
+        ]
+      },
+      "25": {
+        "uc_nome": "Reserva Biológica do Maicuru (REBIO)",
+        "top_drivers": [
+          {
+            "feature": "dist_estradas_m",
+            "mean_shap": -0.41742
+          },
+          {
+            "feature": "tempo_desde_fogo_anos",
+            "mean_shap": -0.29181
+          },
+          {
+            "feature": "dist_pastagem_m",
+            "mean_shap": -0.17694
+          },
+          {
+            "feature": "lst_dia_c",
+            "mean_shap": 0.11105
+          },
+          {
+            "feature": "frac_floresta",
+            "mean_shap": -0.09394
+          }
+        ]
+      },
+      "26": {
+        "uc_nome": "Reserva de Desenvolvimento Sustentável Alcobaça",
+        "top_drivers": [
+          {
+            "feature": "tempo_desde_fogo_anos",
+            "mean_shap": 1.00351
+          },
+          {
+            "feature": "dist_pastagem_m",
+            "mean_shap": 0.61057
+          },
+          {
+            "feature": "dist_estradas_m",
+            "mean_shap": 0.48369
+          },
+          {
+            "feature": "chuva_30d_mm",
+            "mean_shap": 0.4012
+          },
+          {
+            "feature": "frac_floresta",
+            "mean_shap": 0.2317
+          }
+        ]
+      },
+      "27": {
+        "uc_nome": "Reserva de Desenvolvimento Sustentável Campo das Mangabas",
+        "top_drivers": [
+          {
+            "feature": "tempo_desde_fogo_anos",
+            "mean_shap": 0.79195
+          },
+          {
+            "feature": "dist_pastagem_m",
+            "mean_shap": 0.63648
+          },
+          {
+            "feature": "dist_estradas_m",
+            "mean_shap": 0.58724
+          },
+          {
+            "feature": "dist_borda_uc_m",
+            "mean_shap": -0.19813
+          },
+          {
+            "feature": "vpd_kpa",
+            "mean_shap": -0.1456
+          }
+        ]
+      },
+      "28": {
+        "uc_nome": "Reserva de Desenvolvimento Sustentável Pucuruí-Ararão",
+        "top_drivers": [
+          {
+            "feature": "dist_pastagem_m",
+            "mean_shap": 0.87978
+          },
+          {
+            "feature": "dist_estradas_m",
+            "mean_shap": 0.61264
+          },
+          {
+            "feature": "chuva_30d_mm",
+            "mean_shap": 0.48168
+          },
+          {
+            "feature": "lst_dia_c",
+            "mean_shap": 0.39903
+          },
+          {
+            "feature": "tempo_desde_fogo_anos",
+            "mean_shap": 0.36803
+          }
+        ]
+      },
+      "29": {
+        "uc_nome": "Reserva de Desenvolvimento Sustentável Vitória de Souzel",
+        "top_drivers": [
+          {
+            "feature": "dist_pastagem_m",
+            "mean_shap": 0.65996
+          },
+          {
+            "feature": "tempo_desde_fogo_anos",
+            "mean_shap": 0.58273
+          },
+          {
+            "feature": "dist_estradas_m",
+            "mean_shap": 0.56918
+          },
+          {
+            "feature": "vpd_kpa",
+            "mean_shap": -0.36075
+          },
+          {
+            "feature": "frac_floresta",
+            "mean_shap": 0.17605
+          }
+        ]
+      }
+    }
+  },
+  "limitacoes_declaradas": [
+    "SHAP explica a previsao do modelo, nao causalidade.",
+    "nuvem_fracao_30d entra no ajuste como controle de detectabilidade e e expurgada da camada explicativa.",
+    "Rotulo MCD64A1 herda vies de deteccao por nuvem e resolucao de 500 m.",
+    "Ramais clandestinos sao sub-mapeados no OSM; a ausencia nao e completada por inferencia.",
+    "frac_sobreposicao_car nao entra: base SICAR/SEMAS nao acessivel.",
+    "Distancias vetoriais rasterizadas a 250 m; erro posicional de ate 250 m.",
+    "Distancias saturadas em 50 km; NaN indica fonte sem feicao no recorte.",
+    "SHAP local de modelo global representa transferencia de drivers (nuisance expurgada: nuvem_fracao_30d)."
+  ]
+}
