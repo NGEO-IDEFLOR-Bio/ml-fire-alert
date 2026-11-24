@@ -36,6 +36,9 @@ def _card() -> dict:
         hiperparametros={"num_leaves": 31},
         limitacoes=["SHAP explica a previsao do modelo, nao causalidade."],
         pasta_ucs={"1": "UC Teste"},
+        shap_por_uc_completo={
+            "1": [{"feature": f, "mean_shap": 0.1} for f in FEATURES_V2],
+        },
     )
 
 
@@ -77,6 +80,19 @@ def test_camada_de_compatibilidade_preserva_consumidor() -> None:
     assert card["shap"]["local_por_uc"]["1"]["uc_nome"] == "UC Teste"
     assert card["metricas"]["auc_pr"] == 0.012
     assert card["shap"]["local_por_uc"]["1"]["top_drivers"][0]["feature"] == "dist_deter_60d_m"
+
+
+def test_por_uc_completo_cobre_todas_as_features() -> None:
+    card = _card()
+    completo = card["shap"]["por_uc_completo"]["1"]
+    assert {d["feature"] for d in completo} == set(card["features_utilizadas"])
+    assert all(d["feature"] not in NUISANCE_FEATURES for d in completo)
+
+
+def test_validar_card_pega_por_uc_incompleto() -> None:
+    card = _card()
+    card["shap"]["por_uc_completo"]["1"].pop()
+    assert any("por_uc_completo" in p for p in validar_card(card))
 
 
 def test_validar_card_pega_nuisance_exposta() -> None:

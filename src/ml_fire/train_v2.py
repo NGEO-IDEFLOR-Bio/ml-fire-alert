@@ -376,6 +376,22 @@ def top_por_uc(matriz: pd.DataFrame, df: pd.DataFrame, *, k: int = 5) -> dict[st
     return saida
 
 
+def medias_por_uc(matriz: pd.DataFrame, df: pd.DataFrame) -> dict[str, list[dict]]:
+    """Média SHAP de **todas** as features por UC (decomposição completa).
+
+    ``top_por_uc`` guarda só o top-k para o painel; este bloco preserva as 11
+    features para a nota pública conseguir mostrar a decomposição inteira, com
+    atenuantes e fatores de menor magnitude.
+    """
+    saida: dict[str, list[dict]] = {}
+    for uc_id, posicoes in df.groupby("uc_id").indices.items():
+        medias = matriz.iloc[posicoes].mean(axis=0)
+        saida[str(int(uc_id))] = [
+            {"feature": str(f), "mean_shap": round(float(medias[f]), 5)} for f in matriz.columns
+        ]
+    return saida
+
+
 def avaliar_holdout_temporal(
     df: pd.DataFrame,
     features: list[str],

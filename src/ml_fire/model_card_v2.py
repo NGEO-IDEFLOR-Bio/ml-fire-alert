@@ -68,6 +68,16 @@ def validar_card(card: dict[str, Any]) -> list[str]:
             if "mean_shap" not in driver:
                 problemas.append(f"driver sem mean_shap na UC {uc}")
 
+    for uc, drivers in ((card.get("shap") or {}).get("por_uc_completo") or {}).items():
+        chaves = {driver.get("feature") for driver in drivers}
+        if chaves != expostas:
+            problemas.append(f"por_uc_completo da UC {uc} nao cobre features_utilizadas")
+        for driver in drivers:
+            if driver.get("feature") in NUISANCE_FEATURES:
+                problemas.append(f"nuisance feature exposta em por_uc_completo da UC {uc}")
+            if "mean_shap" not in driver:
+                problemas.append(f"por_uc_completo sem mean_shap na UC {uc}")
+
     if metricas.get("protocolo") and "Spatial Block" not in str(metricas["protocolo"]):
         problemas.append("protocolo de validacao nao e Spatial Block CV")
 
@@ -87,6 +97,7 @@ def montar_card(
     hiperparametros: dict[str, Any],
     limitacoes: list[str],
     pasta_ucs: dict[str, str] | None = None,
+    shap_por_uc_completo: dict[str, list[dict[str, float]]] | None = None,
 ) -> dict[str, Any]:
     """Monta o card v2 (schema da Secao 4 + camada de compatibilidade)."""
     expostas = [f for f in features if f not in NUISANCE_FEATURES]
@@ -134,6 +145,11 @@ def montar_card(
         "shap": {
             "global_top": shap_global,
             "local_por_uc": _compat_local(top_drivers_ucs, pasta_ucs or {}),
+            **(
+                {"por_uc_completo": shap_por_uc_completo}
+                if shap_por_uc_completo is not None
+                else {}
+            ),
         },
         "limitacoes_declaradas": limitacoes,
     }

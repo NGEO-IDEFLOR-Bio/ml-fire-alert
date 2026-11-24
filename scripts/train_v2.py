@@ -28,6 +28,7 @@ from ml_fire.train_v2 import (
     avaliar_cv,
     avaliar_holdout_temporal,
     matriz_shap,
+    medias_por_uc,
     selecionar_hiperparametros,
     top_global,
     top_por_uc,
@@ -118,6 +119,7 @@ def main(argv: list[str] | None = None) -> int:
     shap_matriz, expurgadas, indices = matriz_shap(treino.modelo, x, features, indices=indices)
     celulas = df.iloc[indices].reset_index(drop=True)
     drivers = top_por_uc(shap_matriz, celulas)
+    drivers_completos = medias_por_uc(shap_matriz, celulas)
     shap_global = top_global(shap_matriz)
 
     nomes = (
@@ -154,13 +156,15 @@ def main(argv: list[str] | None = None) -> int:
             "Rotulo MCD64A1 herda vies de deteccao por nuvem e resolucao de 500 m.",
             "Ramais clandestinos sao sub-mapeados no OSM; a ausencia nao e completada "
             "por inferencia.",
-            "frac_sobreposicao_car nao entra: base SICAR/SEMAS nao acessivel.",
+            "frac_sobreposicao_car usa extrato estatico do SICAR-PA (via ver-o-car-api, "
+            "~390 mil imoveis); imoveis nao declarados nao entram.",
             "Distancias vetoriais rasterizadas a 250 m; erro posicional de ate 250 m.",
             "Distancias saturadas em 50 km; NaN indica fonte sem feicao no recorte.",
             f"SHAP local de modelo global representa transferencia de drivers "
             f"(nuisance expurgada: {', '.join(expurgadas)}).",
         ],
         pasta_ucs=nomes_str,
+        shap_por_uc_completo=drivers_completos,
     )
 
     out_dir.mkdir(parents=True, exist_ok=True)

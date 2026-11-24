@@ -1929,6 +1929,1342 @@
           }
         ]
       }
+    },
+    "por_uc_completo": {
+      "1": [
+        {
+          "feature": "chuva_30d_mm",
+          "mean_shap": -0.24226
+        },
+        {
+          "feature": "dist_deter_60d_m",
+          "mean_shap": 0.11705
+        },
+        {
+          "feature": "dist_pastagem_m",
+          "mean_shap": 0.43167
+        },
+        {
+          "feature": "dist_estradas_m",
+          "mean_shap": 0.47735
+        },
+        {
+          "feature": "lst_dia_c",
+          "mean_shap": -0.00539
+        },
+        {
+          "feature": "vpd_kpa",
+          "mean_shap": -0.11036
+        },
+        {
+          "feature": "dist_borda_uc_m",
+          "mean_shap": -0.10267
+        },
+        {
+          "feature": "frac_floresta",
+          "mean_shap": 0.01044
+        },
+        {
+          "feature": "declividade_deg",
+          "mean_shap": 0.06816
+        },
+        {
+          "feature": "tempo_desde_fogo_anos",
+          "mean_shap": 0.00033
+        },
+        {
+          "feature": "frac_sobreposicao_car",
+          "mean_shap": 0.02741
+        }
+      ],
+      "2": [
+        {
+          "feature": "chuva_30d_mm",
+          "mean_shap": -0.15563
+        },
+        {
+          "feature": "dist_deter_60d_m",
+          "mean_shap": 0.27628
+        },
+        {
+          "feature": "dist_pastagem_m",
+          "mean_shap": 0.52862
+        },
+        {
+          "feature": "dist_estradas_m",
+          "mean_shap": 0.46098
+        },
+        {
+          "feature": "lst_dia_c",
+          "mean_shap": 0.23848
+        },
+        {
+          "feature": "vpd_kpa",
+          "mean_shap": -0.23857
+        },
+        {
+          "feature": "dist_borda_uc_m",
+          "mean_shap": -0.10695
+        },
+        {
+          "feature": "frac_floresta",
+          "mean_shap": 0.0726
+        },
+        {
+          "feature": "declividade_deg",
+          "mean_shap": 0.09006
+        },
+        {
+          "feature": "tempo_desde_fogo_anos",
+          "mean_shap": -0.12029
+        },
+        {
+          "feature": "frac_sobreposicao_car",
+          "mean_shap": 0.0
+        }
+      ],
+      "3": [
+        {
+          "feature": "chuva_30d_mm",
+          "mean_shap": -0.09185
+        },
+        {
+          "feature": "dist_deter_60d_m",
+          "mean_shap": 0.02166
+        },
+        {
+          "feature": "dist_pastagem_m",
+          "mean_shap": 0.29405
+        },
+        {
+          "feature": "dist_estradas_m",
+          "mean_shap": 0.51882
+        },
+        {
+          "feature": "lst_dia_c",
+          "mean_shap": -0.07432
+        },
+        {
+          "feature": "vpd_kpa",
+          "mean_shap": -0.19124
+        },
+        {
+          "feature": "dist_borda_uc_m",
+          "mean_shap": -0.13382
+        },
+        {
+          "feature": "frac_floresta",
+          "mean_shap": 0.08628
+        },
+        {
+          "feature": "declividade_deg",
+          "mean_shap": 0.07064
+        },
+        {
+          "feature": "tempo_desde_fogo_anos",
+          "mean_shap": -0.02778
+        },
+        {
+          "feature": "frac_sobreposicao_car",
+          "mean_shap": -0.04268
+        }
+      ],
+      "4": [
+        {
+          "feature": "chuva_30d_mm",
+          "mean_shap": 0.40795
+        },
+        {
+          "feature": "dist_deter_60d_m",
+          "mean_shap": -0.02111
+        },
+        {
+          "feature": "dist_pastagem_m",
+          "mean_shap": 0.61715
+        },
+        {
+          "feature": "dist_estradas_m",
+          "mean_shap": 0.65789
+        },
+        {
+          "feature": "lst_dia_c",
+          "mean_shap": 0.48229
+        },
+        {
+          "feature": "vpd_kpa",
+          "mean_shap": 0.40934
+        },
+        {
+          "feature": "dist_borda_uc_m",
+          "mean_shap": -0.11486
+        },
+        {
+          "feature": "frac_floresta",
+          "mean_shap": 0.09443
+        },
+        {
+          "feature": "declividade_deg",
+          "mean_shap": -0.02907
+        },
+        {
+          "feature": "tempo_desde_fogo_anos",
+          "mean_shap": 0.70615
+        },
+        {
+          "feature": "frac_sobreposicao_car",
+          "mean_shap": 0.05135
+        }
+      ],
+      "5": [
+        {
+          "feature": "chuva_30d_mm",
+          "mean_shap": 0.43102
+        },
+        {
+          "feature": "dist_deter_60d_m",
+          "mean_shap": 0.16926
+        },
+        {
+          "feature": "dist_pastagem_m",
+          "mean_shap": 0.5478
+        },
+        {
+          "feature": "dist_estradas_m",
+          "mean_shap": 0.52496
+        },
+        {
+          "feature": "lst_dia_c",
+          "mean_shap": 0.1833
+        },
+        {
+          "feature": "vpd_kpa",
+          "mean_shap": 0.1775
+        },
+        {
+          "feature": "dist_borda_uc_m",
+          "mean_shap": -0.02175
+        },
+        {
+          "feature": "frac_floresta",
+          "mean_shap": 0.0712
+        },
+        {
+          "feature": "declividade_deg",
+          "mean_shap": -0.01427
+        },
+        {
+          "feature": "tempo_desde_fogo_anos",
+          "mean_shap": 0.73528
+        },
+        {
+          "feature": "frac_sobreposicao_car",
+          "mean_shap": 0.02287
+        }
+      ],
+      "6": [
+        {
+          "feature": "chuva_30d_mm",
+          "mean_shap": -0.2243
+        },
+        {
+          "feature": "dist_deter_60d_m",
+          "mean_shap": 0.0375
+        },
+        {
+          "feature": "dist_pastagem_m",
+          "mean_shap": 0.08894
+        },
+        {
+          "feature": "dist_estradas_m",
+          "mean_shap": 0.01205
+        },
+        {
+          "feature": "lst_dia_c",
+          "mean_shap": 0.04561
+        },
+        {
+          "feature": "vpd_kpa",
+          "mean_shap": -0.12288
+        },
+        {
+          "feature": "dist_borda_uc_m",
+          "mean_shap": 0.01989
+        },
+        {
+          "feature": "frac_floresta",
+          "mean_shap": 0.04497
+        },
+        {
+          "feature": "declividade_deg",
+          "mean_shap": 0.0642
+        },
+        {
+          "feature": "tempo_desde_fogo_anos",
+          "mean_shap": 0.08429
+        },
+        {
+          "feature": "frac_sobreposicao_car",
+          "mean_shap": 0.02875
+        }
+      ],
+      "7": [
+        {
+          "feature": "chuva_30d_mm",
+          "mean_shap": -0.00294
+        },
+        {
+          "feature": "dist_deter_60d_m",
+          "mean_shap": 0.08926
+        },
+        {
+          "feature": "dist_pastagem_m",
+          "mean_shap": 0.42688
+        },
+        {
+          "feature": "dist_estradas_m",
+          "mean_shap": 0.48188
+        },
+        {
+          "feature": "lst_dia_c",
+          "mean_shap": 0.12264
+        },
+        {
+          "feature": "vpd_kpa",
+          "mean_shap": 0.01525
+        },
+        {
+          "feature": "dist_borda_uc_m",
+          "mean_shap": -0.07493
+        },
+        {
+          "feature": "frac_floresta",
+          "mean_shap": 0.09912
+        },
+        {
+          "feature": "declividade_deg",
+          "mean_shap": 0.0699
+        },
+        {
+          "feature": "tempo_desde_fogo_anos",
+          "mean_shap": 0.39661
+        },
+        {
+          "feature": "frac_sobreposicao_car",
+          "mean_shap": 0.00116
+        }
+      ],
+      "8": [
+        {
+          "feature": "chuva_30d_mm",
+          "mean_shap": 0.53405
+        },
+        {
+          "feature": "dist_deter_60d_m",
+          "mean_shap": 0.37309
+        },
+        {
+          "feature": "dist_pastagem_m",
+          "mean_shap": 0.5426
+        },
+        {
+          "feature": "dist_estradas_m",
+          "mean_shap": 0.51196
+        },
+        {
+          "feature": "lst_dia_c",
+          "mean_shap": 0.10333
+        },
+        {
+          "feature": "vpd_kpa",
+          "mean_shap": 0.4182
+        },
+        {
+          "feature": "dist_borda_uc_m",
+          "mean_shap": 0.0213
+        },
+        {
+          "feature": "frac_floresta",
+          "mean_shap": -0.00157
+        },
+        {
+          "feature": "declividade_deg",
+          "mean_shap": -0.04103
+        },
+        {
+          "feature": "tempo_desde_fogo_anos",
+          "mean_shap": 1.04674
+        },
+        {
+          "feature": "frac_sobreposicao_car",
+          "mean_shap": 0.0313
+        }
+      ],
+      "9": [
+        {
+          "feature": "chuva_30d_mm",
+          "mean_shap": -0.10449
+        },
+        {
+          "feature": "dist_deter_60d_m",
+          "mean_shap": -0.02065
+        },
+        {
+          "feature": "dist_pastagem_m",
+          "mean_shap": -0.29724
+        },
+        {
+          "feature": "dist_estradas_m",
+          "mean_shap": -0.31987
+        },
+        {
+          "feature": "lst_dia_c",
+          "mean_shap": -0.03243
+        },
+        {
+          "feature": "vpd_kpa",
+          "mean_shap": -0.08593
+        },
+        {
+          "feature": "dist_borda_uc_m",
+          "mean_shap": 0.01056
+        },
+        {
+          "feature": "frac_floresta",
+          "mean_shap": -0.03298
+        },
+        {
+          "feature": "declividade_deg",
+          "mean_shap": -0.00664
+        },
+        {
+          "feature": "tempo_desde_fogo_anos",
+          "mean_shap": -0.26155
+        },
+        {
+          "feature": "frac_sobreposicao_car",
+          "mean_shap": -0.03612
+        }
+      ],
+      "10": [
+        {
+          "feature": "chuva_30d_mm",
+          "mean_shap": 0.01156
+        },
+        {
+          "feature": "dist_deter_60d_m",
+          "mean_shap": 0.04567
+        },
+        {
+          "feature": "dist_pastagem_m",
+          "mean_shap": 0.23107
+        },
+        {
+          "feature": "dist_estradas_m",
+          "mean_shap": 0.19336
+        },
+        {
+          "feature": "lst_dia_c",
+          "mean_shap": -0.01028
+        },
+        {
+          "feature": "vpd_kpa",
+          "mean_shap": -0.09816
+        },
+        {
+          "feature": "dist_borda_uc_m",
+          "mean_shap": -0.02888
+        },
+        {
+          "feature": "frac_floresta",
+          "mean_shap": -0.05694
+        },
+        {
+          "feature": "declividade_deg",
+          "mean_shap": -0.01728
+        },
+        {
+          "feature": "tempo_desde_fogo_anos",
+          "mean_shap": -0.07223
+        },
+        {
+          "feature": "frac_sobreposicao_car",
+          "mean_shap": 0.02341
+        }
+      ],
+      "11": [
+        {
+          "feature": "chuva_30d_mm",
+          "mean_shap": 0.38403
+        },
+        {
+          "feature": "dist_deter_60d_m",
+          "mean_shap": 0.01218
+        },
+        {
+          "feature": "dist_pastagem_m",
+          "mean_shap": 0.08418
+        },
+        {
+          "feature": "dist_estradas_m",
+          "mean_shap": 0.19893
+        },
+        {
+          "feature": "lst_dia_c",
+          "mean_shap": -0.20948
+        },
+        {
+          "feature": "vpd_kpa",
+          "mean_shap": 0.15703
+        },
+        {
+          "feature": "dist_borda_uc_m",
+          "mean_shap": 0.00743
+        },
+        {
+          "feature": "frac_floresta",
+          "mean_shap": -0.06508
+        },
+        {
+          "feature": "declividade_deg",
+          "mean_shap": -0.00596
+        },
+        {
+          "feature": "tempo_desde_fogo_anos",
+          "mean_shap": -0.25879
+        },
+        {
+          "feature": "frac_sobreposicao_car",
+          "mean_shap": 0.03272
+        }
+      ],
+      "12": [
+        {
+          "feature": "chuva_30d_mm",
+          "mean_shap": 0.01891
+        },
+        {
+          "feature": "dist_deter_60d_m",
+          "mean_shap": 0.08475
+        },
+        {
+          "feature": "dist_pastagem_m",
+          "mean_shap": 0.00902
+        },
+        {
+          "feature": "dist_estradas_m",
+          "mean_shap": -0.22274
+        },
+        {
+          "feature": "lst_dia_c",
+          "mean_shap": -0.01002
+        },
+        {
+          "feature": "vpd_kpa",
+          "mean_shap": -0.12659
+        },
+        {
+          "feature": "dist_borda_uc_m",
+          "mean_shap": 0.00878
+        },
+        {
+          "feature": "frac_floresta",
+          "mean_shap": -0.03923
+        },
+        {
+          "feature": "declividade_deg",
+          "mean_shap": -0.01867
+        },
+        {
+          "feature": "tempo_desde_fogo_anos",
+          "mean_shap": -0.17299
+        },
+        {
+          "feature": "frac_sobreposicao_car",
+          "mean_shap": 0.04338
+        }
+      ],
+      "13": [
+        {
+          "feature": "chuva_30d_mm",
+          "mean_shap": -0.08321
+        },
+        {
+          "feature": "dist_deter_60d_m",
+          "mean_shap": 0.00232
+        },
+        {
+          "feature": "dist_pastagem_m",
+          "mean_shap": -0.17322
+        },
+        {
+          "feature": "dist_estradas_m",
+          "mean_shap": -0.09929
+        },
+        {
+          "feature": "lst_dia_c",
+          "mean_shap": -0.09419
+        },
+        {
+          "feature": "vpd_kpa",
+          "mean_shap": -0.09899
+        },
+        {
+          "feature": "dist_borda_uc_m",
+          "mean_shap": 0.00685
+        },
+        {
+          "feature": "frac_floresta",
+          "mean_shap": -0.05145
+        },
+        {
+          "feature": "declividade_deg",
+          "mean_shap": -0.01188
+        },
+        {
+          "feature": "tempo_desde_fogo_anos",
+          "mean_shap": -0.26426
+        },
+        {
+          "feature": "frac_sobreposicao_car",
+          "mean_shap": -0.01352
+        }
+      ],
+      "14": [
+        {
+          "feature": "chuva_30d_mm",
+          "mean_shap": 0.0258
+        },
+        {
+          "feature": "dist_deter_60d_m",
+          "mean_shap": 0.0169
+        },
+        {
+          "feature": "dist_pastagem_m",
+          "mean_shap": 0.16802
+        },
+        {
+          "feature": "dist_estradas_m",
+          "mean_shap": -0.31575
+        },
+        {
+          "feature": "lst_dia_c",
+          "mean_shap": -0.03076
+        },
+        {
+          "feature": "vpd_kpa",
+          "mean_shap": -0.09214
+        },
+        {
+          "feature": "dist_borda_uc_m",
+          "mean_shap": -0.00285
+        },
+        {
+          "feature": "frac_floresta",
+          "mean_shap": -0.04281
+        },
+        {
+          "feature": "declividade_deg",
+          "mean_shap": -0.03349
+        },
+        {
+          "feature": "tempo_desde_fogo_anos",
+          "mean_shap": -0.23221
+        },
+        {
+          "feature": "frac_sobreposicao_car",
+          "mean_shap": -0.009
+        }
+      ],
+      "15": [
+        {
+          "feature": "chuva_30d_mm",
+          "mean_shap": -0.00799
+        },
+        {
+          "feature": "dist_deter_60d_m",
+          "mean_shap": -0.00197
+        },
+        {
+          "feature": "dist_pastagem_m",
+          "mean_shap": 0.35634
+        },
+        {
+          "feature": "dist_estradas_m",
+          "mean_shap": 0.58766
+        },
+        {
+          "feature": "lst_dia_c",
+          "mean_shap": -0.01735
+        },
+        {
+          "feature": "vpd_kpa",
+          "mean_shap": -0.15757
+        },
+        {
+          "feature": "dist_borda_uc_m",
+          "mean_shap": -0.15634
+        },
+        {
+          "feature": "frac_floresta",
+          "mean_shap": 0.07689
+        },
+        {
+          "feature": "declividade_deg",
+          "mean_shap": 0.07272
+        },
+        {
+          "feature": "tempo_desde_fogo_anos",
+          "mean_shap": -0.05758
+        },
+        {
+          "feature": "frac_sobreposicao_car",
+          "mean_shap": -0.03752
+        }
+      ],
+      "16": [
+        {
+          "feature": "chuva_30d_mm",
+          "mean_shap": -0.19239
+        },
+        {
+          "feature": "dist_deter_60d_m",
+          "mean_shap": -0.01689
+        },
+        {
+          "feature": "dist_pastagem_m",
+          "mean_shap": -0.07597
+        },
+        {
+          "feature": "dist_estradas_m",
+          "mean_shap": -0.38653
+        },
+        {
+          "feature": "lst_dia_c",
+          "mean_shap": 0.00102
+        },
+        {
+          "feature": "vpd_kpa",
+          "mean_shap": -0.08751
+        },
+        {
+          "feature": "dist_borda_uc_m",
+          "mean_shap": 0.01236
+        },
+        {
+          "feature": "frac_floresta",
+          "mean_shap": -0.03716
+        },
+        {
+          "feature": "declividade_deg",
+          "mean_shap": -0.0166
+        },
+        {
+          "feature": "tempo_desde_fogo_anos",
+          "mean_shap": -0.2373
+        },
+        {
+          "feature": "frac_sobreposicao_car",
+          "mean_shap": -0.04857
+        }
+      ],
+      "17": [
+        {
+          "feature": "chuva_30d_mm",
+          "mean_shap": -0.37067
+        },
+        {
+          "feature": "dist_deter_60d_m",
+          "mean_shap": -0.01084
+        },
+        {
+          "feature": "dist_pastagem_m",
+          "mean_shap": -0.13732
+        },
+        {
+          "feature": "dist_estradas_m",
+          "mean_shap": -0.40588
+        },
+        {
+          "feature": "lst_dia_c",
+          "mean_shap": -0.02756
+        },
+        {
+          "feature": "vpd_kpa",
+          "mean_shap": -0.00438
+        },
+        {
+          "feature": "dist_borda_uc_m",
+          "mean_shap": 0.0014
+        },
+        {
+          "feature": "frac_floresta",
+          "mean_shap": -0.03589
+        },
+        {
+          "feature": "declividade_deg",
+          "mean_shap": 0.0629
+        },
+        {
+          "feature": "tempo_desde_fogo_anos",
+          "mean_shap": -0.24131
+        },
+        {
+          "feature": "frac_sobreposicao_car",
+          "mean_shap": 0.04663
+        }
+      ],
+      "18": [
+        {
+          "feature": "chuva_30d_mm",
+          "mean_shap": 0.33381
+        },
+        {
+          "feature": "dist_deter_60d_m",
+          "mean_shap": -0.04217
+        },
+        {
+          "feature": "dist_pastagem_m",
+          "mean_shap": 0.56311
+        },
+        {
+          "feature": "dist_estradas_m",
+          "mean_shap": 0.64494
+        },
+        {
+          "feature": "lst_dia_c",
+          "mean_shap": 0.47469
+        },
+        {
+          "feature": "vpd_kpa",
+          "mean_shap": 0.60174
+        },
+        {
+          "feature": "dist_borda_uc_m",
+          "mean_shap": -0.0142
+        },
+        {
+          "feature": "frac_floresta",
+          "mean_shap": 0.15878
+        },
+        {
+          "feature": "declividade_deg",
+          "mean_shap": -0.01506
+        },
+        {
+          "feature": "tempo_desde_fogo_anos",
+          "mean_shap": 1.66514
+        },
+        {
+          "feature": "frac_sobreposicao_car",
+          "mean_shap": 0.06294
+        }
+      ],
+      "19": [
+        {
+          "feature": "chuva_30d_mm",
+          "mean_shap": -0.08069
+        },
+        {
+          "feature": "dist_deter_60d_m",
+          "mean_shap": 0.19233
+        },
+        {
+          "feature": "dist_pastagem_m",
+          "mean_shap": 0.73215
+        },
+        {
+          "feature": "dist_estradas_m",
+          "mean_shap": 0.55386
+        },
+        {
+          "feature": "lst_dia_c",
+          "mean_shap": 0.13991
+        },
+        {
+          "feature": "vpd_kpa",
+          "mean_shap": -0.21293
+        },
+        {
+          "feature": "dist_borda_uc_m",
+          "mean_shap": 0.07945
+        },
+        {
+          "feature": "frac_floresta",
+          "mean_shap": 0.0166
+        },
+        {
+          "feature": "declividade_deg",
+          "mean_shap": 0.05083
+        },
+        {
+          "feature": "tempo_desde_fogo_anos",
+          "mean_shap": -0.09578
+        },
+        {
+          "feature": "frac_sobreposicao_car",
+          "mean_shap": 0.03829
+        }
+      ],
+      "20": [
+        {
+          "feature": "chuva_30d_mm",
+          "mean_shap": 0.03487
+        },
+        {
+          "feature": "dist_deter_60d_m",
+          "mean_shap": 0.05116
+        },
+        {
+          "feature": "dist_pastagem_m",
+          "mean_shap": 0.69359
+        },
+        {
+          "feature": "dist_estradas_m",
+          "mean_shap": 0.63597
+        },
+        {
+          "feature": "lst_dia_c",
+          "mean_shap": 0.17551
+        },
+        {
+          "feature": "vpd_kpa",
+          "mean_shap": -0.02339
+        },
+        {
+          "feature": "dist_borda_uc_m",
+          "mean_shap": 0.05383
+        },
+        {
+          "feature": "frac_floresta",
+          "mean_shap": 0.06547
+        },
+        {
+          "feature": "declividade_deg",
+          "mean_shap": -0.07062
+        },
+        {
+          "feature": "tempo_desde_fogo_anos",
+          "mean_shap": 0.27112
+        },
+        {
+          "feature": "frac_sobreposicao_car",
+          "mean_shap": -0.00431
+        }
+      ],
+      "21": [
+        {
+          "feature": "chuva_30d_mm",
+          "mean_shap": -0.22554
+        },
+        {
+          "feature": "dist_deter_60d_m",
+          "mean_shap": 0.08386
+        },
+        {
+          "feature": "dist_pastagem_m",
+          "mean_shap": 0.52322
+        },
+        {
+          "feature": "dist_estradas_m",
+          "mean_shap": 0.42912
+        },
+        {
+          "feature": "lst_dia_c",
+          "mean_shap": 0.01735
+        },
+        {
+          "feature": "vpd_kpa",
+          "mean_shap": -0.17497
+        },
+        {
+          "feature": "dist_borda_uc_m",
+          "mean_shap": -0.11921
+        },
+        {
+          "feature": "frac_floresta",
+          "mean_shap": 0.00213
+        },
+        {
+          "feature": "declividade_deg",
+          "mean_shap": 0.05389
+        },
+        {
+          "feature": "tempo_desde_fogo_anos",
+          "mean_shap": 0.49274
+        },
+        {
+          "feature": "frac_sobreposicao_car",
+          "mean_shap": 0.01553
+        }
+      ],
+      "22": [
+        {
+          "feature": "chuva_30d_mm",
+          "mean_shap": -0.05077
+        },
+        {
+          "feature": "dist_deter_60d_m",
+          "mean_shap": 0.05603
+        },
+        {
+          "feature": "dist_pastagem_m",
+          "mean_shap": 0.51983
+        },
+        {
+          "feature": "dist_estradas_m",
+          "mean_shap": 0.46793
+        },
+        {
+          "feature": "lst_dia_c",
+          "mean_shap": 0.13454
+        },
+        {
+          "feature": "vpd_kpa",
+          "mean_shap": -0.36196
+        },
+        {
+          "feature": "dist_borda_uc_m",
+          "mean_shap": -0.06598
+        },
+        {
+          "feature": "frac_floresta",
+          "mean_shap": 0.02054
+        },
+        {
+          "feature": "declividade_deg",
+          "mean_shap": 0.05654
+        },
+        {
+          "feature": "tempo_desde_fogo_anos",
+          "mean_shap": 1.37509
+        },
+        {
+          "feature": "frac_sobreposicao_car",
+          "mean_shap": 0.02181
+        }
+      ],
+      "23": [
+        {
+          "feature": "chuva_30d_mm",
+          "mean_shap": 0.36174
+        },
+        {
+          "feature": "dist_deter_60d_m",
+          "mean_shap": 0.23301
+        },
+        {
+          "feature": "dist_pastagem_m",
+          "mean_shap": 0.40574
+        },
+        {
+          "feature": "dist_estradas_m",
+          "mean_shap": 0.4504
+        },
+        {
+          "feature": "lst_dia_c",
+          "mean_shap": -0.04774
+        },
+        {
+          "feature": "vpd_kpa",
+          "mean_shap": 0.21472
+        },
+        {
+          "feature": "dist_borda_uc_m",
+          "mean_shap": -0.02762
+        },
+        {
+          "feature": "frac_floresta",
+          "mean_shap": -0.02539
+        },
+        {
+          "feature": "declividade_deg",
+          "mean_shap": -0.02497
+        },
+        {
+          "feature": "tempo_desde_fogo_anos",
+          "mean_shap": 0.13024
+        },
+        {
+          "feature": "frac_sobreposicao_car",
+          "mean_shap": 0.01715
+        }
+      ],
+      "24": [
+        {
+          "feature": "chuva_30d_mm",
+          "mean_shap": -0.01753
+        },
+        {
+          "feature": "dist_deter_60d_m",
+          "mean_shap": 0.0884
+        },
+        {
+          "feature": "dist_pastagem_m",
+          "mean_shap": 0.53872
+        },
+        {
+          "feature": "dist_estradas_m",
+          "mean_shap": 0.3399
+        },
+        {
+          "feature": "lst_dia_c",
+          "mean_shap": 0.0717
+        },
+        {
+          "feature": "vpd_kpa",
+          "mean_shap": -0.26713
+        },
+        {
+          "feature": "dist_borda_uc_m",
+          "mean_shap": -0.0376
+        },
+        {
+          "feature": "frac_floresta",
+          "mean_shap": 0.07514
+        },
+        {
+          "feature": "declividade_deg",
+          "mean_shap": 0.00595
+        },
+        {
+          "feature": "tempo_desde_fogo_anos",
+          "mean_shap": 0.29178
+        },
+        {
+          "feature": "frac_sobreposicao_car",
+          "mean_shap": -0.01183
+        }
+      ],
+      "25": [
+        {
+          "feature": "chuva_30d_mm",
+          "mean_shap": 0.01866
+        },
+        {
+          "feature": "dist_deter_60d_m",
+          "mean_shap": -0.0206
+        },
+        {
+          "feature": "dist_pastagem_m",
+          "mean_shap": -0.12008
+        },
+        {
+          "feature": "dist_estradas_m",
+          "mean_shap": -0.36785
+        },
+        {
+          "feature": "lst_dia_c",
+          "mean_shap": 0.01738
+        },
+        {
+          "feature": "vpd_kpa",
+          "mean_shap": -0.06322
+        },
+        {
+          "feature": "dist_borda_uc_m",
+          "mean_shap": 0.01919
+        },
+        {
+          "feature": "frac_floresta",
+          "mean_shap": -0.04242
+        },
+        {
+          "feature": "declividade_deg",
+          "mean_shap": -0.01466
+        },
+        {
+          "feature": "tempo_desde_fogo_anos",
+          "mean_shap": -0.26802
+        },
+        {
+          "feature": "frac_sobreposicao_car",
+          "mean_shap": -0.0631
+        }
+      ],
+      "26": [
+        {
+          "feature": "chuva_30d_mm",
+          "mean_shap": 0.31877
+        },
+        {
+          "feature": "dist_deter_60d_m",
+          "mean_shap": 0.1662
+        },
+        {
+          "feature": "dist_pastagem_m",
+          "mean_shap": 0.54376
+        },
+        {
+          "feature": "dist_estradas_m",
+          "mean_shap": 0.41281
+        },
+        {
+          "feature": "lst_dia_c",
+          "mean_shap": 0.05022
+        },
+        {
+          "feature": "vpd_kpa",
+          "mean_shap": 0.04829
+        },
+        {
+          "feature": "dist_borda_uc_m",
+          "mean_shap": -0.06312
+        },
+        {
+          "feature": "frac_floresta",
+          "mean_shap": 0.06424
+        },
+        {
+          "feature": "declividade_deg",
+          "mean_shap": -0.08104
+        },
+        {
+          "feature": "tempo_desde_fogo_anos",
+          "mean_shap": 0.95162
+        },
+        {
+          "feature": "frac_sobreposicao_car",
+          "mean_shap": 0.02026
+        }
+      ],
+      "27": [
+        {
+          "feature": "chuva_30d_mm",
+          "mean_shap": -0.12516
+        },
+        {
+          "feature": "dist_deter_60d_m",
+          "mean_shap": 0.04419
+        },
+        {
+          "feature": "dist_pastagem_m",
+          "mean_shap": 0.5484
+        },
+        {
+          "feature": "dist_estradas_m",
+          "mean_shap": 0.49616
+        },
+        {
+          "feature": "lst_dia_c",
+          "mean_shap": 0.01824
+        },
+        {
+          "feature": "vpd_kpa",
+          "mean_shap": -0.23856
+        },
+        {
+          "feature": "dist_borda_uc_m",
+          "mean_shap": -0.10183
+        },
+        {
+          "feature": "frac_floresta",
+          "mean_shap": -0.00639
+        },
+        {
+          "feature": "declividade_deg",
+          "mean_shap": 0.07355
+        },
+        {
+          "feature": "tempo_desde_fogo_anos",
+          "mean_shap": 0.78417
+        },
+        {
+          "feature": "frac_sobreposicao_car",
+          "mean_shap": 0.00793
+        }
+      ],
+      "28": [
+        {
+          "feature": "chuva_30d_mm",
+          "mean_shap": 0.42506
+        },
+        {
+          "feature": "dist_deter_60d_m",
+          "mean_shap": 0.06962
+        },
+        {
+          "feature": "dist_pastagem_m",
+          "mean_shap": 0.72839
+        },
+        {
+          "feature": "dist_estradas_m",
+          "mean_shap": 0.4985
+        },
+        {
+          "feature": "lst_dia_c",
+          "mean_shap": 0.22606
+        },
+        {
+          "feature": "vpd_kpa",
+          "mean_shap": 0.19599
+        },
+        {
+          "feature": "dist_borda_uc_m",
+          "mean_shap": 0.11228
+        },
+        {
+          "feature": "frac_floresta",
+          "mean_shap": 0.10208
+        },
+        {
+          "feature": "declividade_deg",
+          "mean_shap": 0.02503
+        },
+        {
+          "feature": "tempo_desde_fogo_anos",
+          "mean_shap": 0.39511
+        },
+        {
+          "feature": "frac_sobreposicao_car",
+          "mean_shap": 0.028
+        }
+      ],
+      "29": [
+        {
+          "feature": "chuva_30d_mm",
+          "mean_shap": 0.07307
+        },
+        {
+          "feature": "dist_deter_60d_m",
+          "mean_shap": 0.18823
+        },
+        {
+          "feature": "dist_pastagem_m",
+          "mean_shap": 0.53204
+        },
+        {
+          "feature": "dist_estradas_m",
+          "mean_shap": 0.46036
+        },
+        {
+          "feature": "lst_dia_c",
+          "mean_shap": 0.09093
+        },
+        {
+          "feature": "vpd_kpa",
+          "mean_shap": -0.36495
+        },
+        {
+          "feature": "dist_borda_uc_m",
+          "mean_shap": -0.09846
+        },
+        {
+          "feature": "frac_floresta",
+          "mean_shap": 0.05637
+        },
+        {
+          "feature": "declividade_deg",
+          "mean_shap": -0.00166
+        },
+        {
+          "feature": "tempo_desde_fogo_anos",
+          "mean_shap": 0.56013
+        },
+        {
+          "feature": "frac_sobreposicao_car",
+          "mean_shap": 0.02566
+        }
+      ]
     }
   },
   "limitacoes_declaradas": [
