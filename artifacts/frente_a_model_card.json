@@ -1936,7 +1936,7 @@
     "nuvem_fracao_30d entra no ajuste como controle de detectabilidade e e expurgada da camada explicativa.",
     "Rotulo MCD64A1 herda vies de deteccao por nuvem e resolucao de 500 m.",
     "Ramais clandestinos sao sub-mapeados no OSM; a ausencia nao e completada por inferencia.",
-    "frac_sobreposicao_car nao entra: base SICAR/SEMAS nao acessivel.",
+    "frac_sobreposicao_car usa extrato estatico do SICAR-PA (via ver-o-car-api, ~390 mil imoveis); imoveis nao declarados nao entram.",
     "Distancias vetoriais rasterizadas a 250 m; erro posicional de ate 250 m.",
     "Distancias saturadas em 50 km; NaN indica fonte sem feicao no recorte.",
     "SHAP local de modelo global representa transferencia de drivers (nuisance expurgada: nuvem_fracao_30d)."
