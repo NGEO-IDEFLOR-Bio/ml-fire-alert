@@ -36,7 +36,7 @@ from ml_fire.raster_ops import amostrar, transform_da_grade  # noqa: E402
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger("extract_car")
 
-CAR_GEOJSON_SRC = Path("H:/Meu Drive/DEV/ver-o-car-api/data/sicar/sicar_imoveis_pa.geojson")
+CAR_GEOJSON_SRC = Path(os.environ.get("CAR_GEOJSON_SRC", ""))
 TO_METRICO = Transformer.from_crs("EPSG:4674", "EPSG:5880", always_xy=True).transform
 
 

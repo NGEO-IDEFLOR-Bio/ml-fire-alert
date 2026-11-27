@@ -8,7 +8,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SISTEMA_ROOT = REPO_ROOT.parent / "sistema_alerta_incendio"
-VISUALIZADOR_DATA = Path(os.environ.get("VISUALIZADOR_DATA", r"H:\Meu Drive\DEV\visualizador\data"))
+VISUALIZADOR_DATA = Path(os.environ.get("VISUALIZADOR_DATA", ""))
 
 
 def _load_dotenv(path: Path) -> None:
