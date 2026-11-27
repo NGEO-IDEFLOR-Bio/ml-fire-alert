@@ -3,6 +3,10 @@ __pycache__/
 *.pyc
 .pytest_cache/
 .ruff_cache/
+# ===== Interno (local-only): contexto de agentes e gestão de projeto =====
+AGENTS.md
+RETOMADA.md
+ISSUES.md
 .env
 secrets/
 data/
